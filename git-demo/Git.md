@@ -1,4 +1,4 @@
-#Kiểm tra Version Git
+#Kiểm tra Version Git\
 	**$ git --v**
 # User Git
 - Cấu hình kiểm tra liên quan tới tài khoản Git
@@ -25,7 +25,7 @@
 1. Bạn cần đứng ở nhánh chính
 - Khi bạn tạo nhánh mới tất cả các thông tin sẽ được lấy từ nhánh mà bạn đang đứng. Nên bạn cần đứng ở nhánh chính (thường là *main* hoặc *master*)\
 	**$ git checkout main**
-2. Tạo nhánh mới
-	**$ git branch <tên_nhánh_mới>**\
-3. Chuyển đổi sang nhánh mới
+2. Tạo nhánh mới\
+	**$ git branch <tên_nhánh_mới>**
+3. Chuyển đổi sang nhánh mới\
 	**$ git checkout <tên_nhánh_cần_đến>
