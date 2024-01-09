@@ -60,7 +60,7 @@
 	**$ git branch -M <Tên_nhánh_khác_với vị_trí đứng> <Tên_mới_cho_nhánh>** *# Đổi tên nhánh khác với vị trí bạn đang đứng*
 2. Đẩy tên mới của nhánh lên remote repository\
 	**$ git push -u origin <Tên_mới_của_nhánh>**
-3. Xóa nhánh mới tên cũ đi\
+3. Xóa nhánh cũ đi\
 	**$ git push -d origin <Tên_nhánh_cũ>**
 # Đẩy code lên Git
 1. Khởi tạo repository (nếu chưa có)\
@@ -77,17 +77,21 @@
 # Xóa commit
 - Dùng cho trường hợp commit bị sai, không hoàn chỉnh hoặc có vấn đề, bạn muốn loại bỏ nó
 1.  Lấy key của commit cần chuyển đến\
-	**$ git log**\
+	**$ git log**
 2. Chuyển commit mà bạn muốn code bạn thực hiện tại vị trí đấy\
-	**$ git reset --hard <mã_key>**\
+	**$ git reset --hard <mã_key>**
 3. Thực hiện xóa commit\
 	**$ git push --force**
 - [Lưu ý]: khi bạn muốn quay về vị trí commit-2 thì các vị trí commit-3,4,.. sẽ được xóa và không lấy lại được
 # Kéo code về local
-	**$ git pull origin <nhánh_cần_kéo_về>** *# Kéo tất cả các thay đổi từ khác với vị trí đứng về local*\
-	**$ git pull** *# Kéo tất cả các thay đổi từ mà bạn đang đứng về local*\
-	**$ git pull origin** *# Kéo tất cả các thay đổi từ kho lưu trữ từ xa vào branch bạn đang làm việc*\
-	**$ git pull --rebase** *# Cách pull chống sung đột*\
+- Kéo tất cả các thay đổi từ khác với vị trí đứng về local.\
+	**$ git pull origin <nhánh_cần_kéo_về>**
+- Kéo tất cả các thay đổi từ mà bạn đang đứng về local.\
+	**$ git pull**
+- Kéo tất cả các thay đổi từ kho lưu trữ từ xa vào branch bạn đang làm việc.\
+	**$ git pull origin**
+- Cách pull chống sung đột
+	**$ git pull --rebase**
 # Hợp nhất code
 1. Di chuyển về nhánh nhận sự hợp nhất.\
 	**$  git checkout <branch_mane1>** *# branch_mane1 là nhánh cần hợp nhất*\
