@@ -1,11 +1,11 @@
 #Các lệnh cơ bản trong Git\
 - Check version\
 	**$ git --v**
-- Hướng dẫn bạn có thể làm được những gì, tất cả các lệnh có thể
+- Hướng dẫn bạn có thể làm được những gì, tất cả các lệnh có thể\
 	**$ git help --all**
-- Kiểm tra trạng thái của kho lưu trữ
+- Kiểm tra trạng thái của kho lưu trữ\
 	**$ git status**
-- Lấy đường link của Git trong folder dự án
+- Lấy đường link của Git trong folder dự án\
 	**$ git remote -v**
 # User Git
 - Cấu hình kiểm tra liên quan tới tài khoản Git
@@ -29,12 +29,14 @@
 - Xóa thông tin xác thực toàn bộ\
 	**$ git config --global --unset-all**
 # Làm việc với nhánh (branch):
-- Nhánh sẽ được lưu trên local và trên internet
+- Nhánh sẽ được lưu trên local và trên remote repository
 ## Kiểm tra các nhánh hiện có trên git\
-- Khi clone source code về local chỉ lưu nhánh chính (namin)\
-	**$ git branch -a** *# kiểm tra các nhánh có trên Git. Bạn cần git pull trước để load lại link git để đàm bảo bạn xem được các branch được người khác tạo*/
-	**$ git branch** *# Kiểm tra các nhánh hiện có trên local. Cách nhánh trên local của  bạn có thể chưa lấy hết các nhánh trên Git, do 1 người khác mới tạo. Nên bạn cần phải check out sanh tất cả các nhánh để lấy tất cả các nhánh về.*
-## Tạo nhánh mới\
+- Khi clone source code về local chỉ lưu nhánh chính (main)\
+	**$ git branch -a**\ 
+*# kKiểm tra các branch hiện có trên remote repository của bạn.*\
+	**$ git branch**\
+*# Kiểm tra các nhánh hiện có trên local.*
+## Tạo nhánh mới
 - Khác với tạo nhánh trên các IDE hay trực tiếp trên Git. Khi dùng lệnh nội dung có trong nhánh xẽ không có gì bạn cần làm thêm bước hợp nhất (merge) nhánh\
 	**$ git branch <tên_nhánh_mới>**
 - Bước 1 chuyển đến nhánh cần lấy nội dung (thường là *main* hoặc *master*)\
