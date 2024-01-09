@@ -28,68 +28,70 @@
 	**$ git config --global --unset user.email**
 - Xóa thông tin xác thực toàn bộ\
 	**$ git config --global --unset-all**
-# Làm việc với nhánh (branch):
+# Làm việc với nhánh (branch)
 - Nhánh sẽ được lưu trên local và trên remote repository
 ## Kiểm tra các nhánh hiện có trên git
 - Khi clone source code về local chỉ lưu nhánh chính (main), bạn cần checkout sang các nhánh khác để local nhận được các nhánh khác.
-- Kiểm tra các branch hiện có trên remote repository của bạn.
+- Kiểm tra các branch hiện có trên remote repository của bạn.\
 	**$ git branch -a**
-- Kiểm tra các nhánh hiện có trên local.
+- Kiểm tra các nhánh hiện có trên local.\
 	**$ git branch**
 ## Tạo nhánh mới
 - *Khác với tạo nhánh trên các IDE hay trực tiếp trên Git. Khi dùng lệnh nội dung có trong nhánh xẽ không có gì bạn cần làm thêm bước hợp nhất (merge) nhánh.*
-- Tạo mới nhánh\
+- Bước 1: Tạo mới nhánh\
 	**$ git branch <tên_nhánh_mới>**
-- Bước 1: chuyển đến nhánh cần lấy nội dung (thường là *main* hoặc *master*).\
+- Bước 2: chuyển đến nhánh cần lấy nội dung (thường là *main* hoặc *master*).\
 	**$ git checkout <main>**
-- Bước 2: Hợp nhất 2 nhánh.\
+- Bước 3: Hợp nhất 2 nhánh.\
 	**$ git merge <nhánh_vừa_tạo>**
-- Bước 3: Đẩy nhánh vừa tạo lên remote repository.\
+- Bước 4: Đẩy nhánh vừa tạo lên remote repository.\
 	**$ git push -u origin <nhánh_vừa_tạo>**
-3. Chuyển đổi sang nhánh mới\
+## Chuyển đổi sang nhánh mới
 	**$ git checkout <tên_nhánh_cần_đến>**
-4. Xóa nhánh:
+## Xóa nhánh
 - Xóa nhánh trên local, sau đó thực hiện xóa nhánh trên remote repository. Bạn cần đảm bảo bạn đang đứng khác nhánh cần xóa.\
 	**$ git branch -d <branch_name>** *# Nhánh này đã được merge*\
 	**$ git branch -D <branch_name>** *# Nhánh này chưa được merge*\
 - Xóa nhánh trên remote repository.\
-	**$ git push -d origin <nhanh_cần_xóa>** *# Nhánh này vẫn lưu trên local. Bạn có để push lên remote repository, hoặc xóa luôn*
-5. Đổi tên nhánh
-- Bước 1: Đổi tên nhánh\
+	**$ git push -d origin <nhanh_cần_xóa>** *# Nhánh này vẫn lưu trên local. Bạn có để push lên remote repository lại, hoặc loại bỏ luôn*
+## Đổi tên nhánh
+1. Đổi tên nhánh\
 	**$ git branch -M <Tên_mới_cho_nhánh>** *# Đổi tên nhánh tại vị trí nhánh bạn đang đứng*\
 	**$ git branch -M <Tên_nhánh_khác_với vị_trí đứng> <Tên_mới_cho_nhánh>** *# Đổi tên nhánh khác với vị trí bạn đang đứng*
-Bước 2: Đẩy tên mới của nhánh lên remote repository
+2. Đẩy tên mới của nhánh lên remote repository\
 	**$ git push -u origin <Tên_mới_của_nhanh>**
-Bước 3: Xóa nhánh mới tên cũ đi
+3. Xóa nhánh mới tên cũ đi\
 	**$ git push -d origin <Tên_nhánh_cũ>**
 # Đẩy code lên Git
 1. Khởi tạo repository (nếu chưa có)\
 	**$ git init**
-2. Thêm và commit các tệp tin
-	**$ git add . ** *# (. hoặc --all)Thêm tất cả các thay đổi hoặc bạn có thể add các file bạn cần đẩy lên thay cho (.) *\
-	**$ git commit -m "<Commit message here>"** *# Commit với message*\
+2. Thêm các file đã có sự thay đổi\
+	**$ git add <>**\
+- *(. hoặc --all) dùng để thêm tất cả các thay đổi, hoặc bạn có thể add các file bạn cần đẩy lên *
+3. Thực hiện note cho các nội dung thay đổi
+	**$ git commit -m "<Commit message here>"**
 - Khi bạn lỡ may thực hiện < git add. > và bạn cần loại bỏ bớt đi các file không muốn đẩy lên\
 	**$ git reset** *# Giúp bạn quay lại đước < git add >, bạn sẽ thực hiện add những file cần đẩy lên git*\
-3. Đưa code lên remote repository
-	**$ git push origin <branch_name>** *# Đẩy code lên remote repository*\
+4. Đưa code lên remote repository\
+	**$ git push origin <branch_name>**
 # Xóa commit
 - Dùng cho trường hợp commit bị sai, không hoàn chỉnh hoặc có vấn đề, bạn muốn loại bỏ nó
-1.  Lấy key của commit cần chuyển đến
+1.  Lấy key của commit cần chuyển đến\
 	**$ git log**\
 2. Chuyển commit mà bạn muốn code bạn thực hiện tại vị trí đấy\
 	**$ git reset --hard <mã_key>\
-3. Thực hiện xóa commit
+3. Thực hiện xóa commit\
 	**$ git push --force**\
-- *Lưu ý*: khi bạn muốn quy về cị trí commit-2 thì các vị trí commit-3,4,.. sẽ được xóa và không lấy lại được
+- [Lưu ý]: khi bạn muốn quay về vị trí commit-2 thì các vị trí commit-3,4,.. sẽ được xóa và không lấy lại được
 # Kéo code về local
 	**$ git pull origin <nhánh_cần_kéo_về>** *# Kéo tất cả các thay đổi từ khác với vị trí đứng về local*\
 	**$ git pull** *# Kéo tất cả các thay đổi từ mà bạn đang đứng về local*\
 	**$ git pull origin** *# Kéo tất cả các thay đổi từ kho lưu trữ từ xa vào branch bạn đang làm việc*\
 	**$ git pull --rebase** *# Cách pull chống sung đột*\
 # Hợp nhất code
-- Bước 1: Di chuyển về nhánh nhận sự hợp nhất.\
+1. Di chuyển về nhánh nhận sự hợp nhất.\
 	**$  git checkout <branch_mane1>** *# branch_mane1 là nhánh cần hợp nhất*\
-- Bước 2: Tiến hành hợp nhất.\
+2. Tiến hành hợp nhất.\
 	**$ git rebase <branch_mane2>** *# Code từ branch_mane2 được hợp nhất vào branch_mane1*\
 ## *Chú ý*: Tương đồng với merge nhưng có sự khác biệt như sau
 - Merge: Chỉ lấy nội dung commit cuối cùng của hai nhánh, tích hợp tạo thành commit mới. Các commit trước đó được giữ nguyên không thay đổi.
