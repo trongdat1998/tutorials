@@ -47,7 +47,7 @@
 4. Đẩy nhánh vừa tạo lên remote repository.\
 	**$ git push -u origin <nhánh_vừa_tạo>**
 ## Chuyển đổi sang nhánh mới
-	**$ git checkout <tên_nhánh_cần_đến>**
+	$ git checkout <tên_nhánh_cần_đến>
 ## Xóa nhánh
 1. Xóa nhánh trên local, sau đó thực hiện xóa nhánh trên remote repository. Bạn cần đảm bảo bạn đang đứng khác nhánh cần xóa.\
 	**$ git branch -d <branch_name>** *# Nhánh này đã được merge*\
@@ -80,8 +80,8 @@
 	**$ git log**
 2. Chuyển commit mà bạn muốn code bạn thực hiện tại vị trí đấy\
 	**$ git reset --hard <mã_key>**
-3. Thực hiện xóa commit\
-	$ git push --force
+3. Thực hiện xóa commit
+	**$ git push --force**
 - [Lưu ý]: khi bạn muốn quay về vị trí commit-2 thì các vị trí commit-3,4,.. sẽ được xóa và không lấy lại được
 # Kéo code về local
 - Kéo tất cả các thay đổi từ khác với vị trí đứng về local.\
