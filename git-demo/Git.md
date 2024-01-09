@@ -49,10 +49,10 @@
 ## Chuyển đổi sang nhánh mới
 	**$ git checkout <tên_nhánh_cần_đến>**
 ## Xóa nhánh
-- Xóa nhánh trên local, sau đó thực hiện xóa nhánh trên remote repository. Bạn cần đảm bảo bạn đang đứng khác nhánh cần xóa.\
+1. Xóa nhánh trên local, sau đó thực hiện xóa nhánh trên remote repository. Bạn cần đảm bảo bạn đang đứng khác nhánh cần xóa.\
 	**$ git branch -d <branch_name>** *# Nhánh này đã được merge*\
 	**$ git branch -D <branch_name>** *# Nhánh này chưa được merge*
-- Xóa nhánh trên remote repository.\
+2. Xóa nhánh trên remote repository.\
 	**$ git push -d origin <nhanh_cần_xóa>** *# Nhánh này vẫn lưu trên local. Bạn có để push lên remote repository lại, hoặc loại bỏ luôn*
 ## Đổi tên nhánh
 1. Đổi tên nhánh\
@@ -66,7 +66,7 @@
 1. Khởi tạo repository (nếu chưa có)\
 	**$ git init**
 2. Thêm các file đã có sự thay đổi\
-	**$ git add <>**\
+	**$ git add <>**
 - (. hoặc --all) dùng để thêm tất cả các thay đổi, hoặc bạn có thể add các file bạn cần đẩy lên *
 3. Thực hiện note cho các nội dung thay đổi\
 	**$ git commit -m "<commit_message_here>"**
@@ -81,7 +81,7 @@
 2. Chuyển commit mà bạn muốn code bạn thực hiện tại vị trí đấy\
 	**$ git reset --hard <mã_key>**
 3. Thực hiện xóa commit\
-	**$ git push --force**
+	$ git push --force
 - [Lưu ý]: khi bạn muốn quay về vị trí commit-2 thì các vị trí commit-3,4,.. sẽ được xóa và không lấy lại được
 # Kéo code về local
 - Kéo tất cả các thay đổi từ khác với vị trí đứng về local.\
