@@ -1,4 +1,4 @@
-#Các lệnh cơ bản trong Git\
+#Các lệnh cơ bản trong Git
 - Check version\
 	**$ git --v**
 - Hướng dẫn bạn có thể làm được những gì, tất cả các lệnh có thể\
@@ -30,32 +30,33 @@
 	**$ git config --global --unset-all**
 # Làm việc với nhánh (branch):
 - Nhánh sẽ được lưu trên local và trên remote repository
-## Kiểm tra các nhánh hiện có trên git\
-- Khi clone source code về local chỉ lưu nhánh chính (main)\
-	**$ git branch -a**\ 
-*# kKiểm tra các branch hiện có trên remote repository của bạn.*\
-	**$ git branch**\
-*# Kiểm tra các nhánh hiện có trên local.*
+## Kiểm tra các nhánh hiện có trên git
+- Khi clone source code về local chỉ lưu nhánh chính (main), bạn cần checkout sang các nhánh khác để local nhận được các nhánh khác.
+- Kiểm tra các branch hiện có trên remote repository của bạn.
+	**$ git branch -a**
+- Kiểm tra các nhánh hiện có trên local.
+	**$ git branch**
 ## Tạo nhánh mới
-- Khác với tạo nhánh trên các IDE hay trực tiếp trên Git. Khi dùng lệnh nội dung có trong nhánh xẽ không có gì bạn cần làm thêm bước hợp nhất (merge) nhánh\
+- *Khác với tạo nhánh trên các IDE hay trực tiếp trên Git. Khi dùng lệnh nội dung có trong nhánh xẽ không có gì bạn cần làm thêm bước hợp nhất (merge) nhánh.*
+- Tạo mới nhánh\
 	**$ git branch <tên_nhánh_mới>**
-- Bước 1 chuyển đến nhánh cần lấy nội dung (thường là *main* hoặc *master*)\
+- Bước 1: chuyển đến nhánh cần lấy nội dung (thường là *main* hoặc *master*).\
 	**$ git checkout <main>**
-- Bước 2: Hợp nhất 2 nhánh\
+- Bước 2: Hợp nhất 2 nhánh.\
 	**$ git merge <nhánh_vừa_tạo>**
-- Bước 3: Đẩy nhánh vừa tạo lên remote repository.
+- Bước 3: Đẩy nhánh vừa tạo lên remote repository.\
 	**$ git push -u origin <nhánh_vừa_tạo>**
 3. Chuyển đổi sang nhánh mới\
 	**$ git checkout <tên_nhánh_cần_đến>**
 4. Xóa nhánh:
-- Xóa nhánh trên local, sau đó thực hiện xóa nhánh trên remote repository. Bạn cần đảm bảo bạn đang đứng khác nhánh cần xóa.
-	**$ git branch -d <branch_name>** *# Nhánh này đã được merge*
-	**$ git branch -D <branch_name>** *# Nhánh này chưa được merge*
-- Xóa nhánh trên remote repository.
+- Xóa nhánh trên local, sau đó thực hiện xóa nhánh trên remote repository. Bạn cần đảm bảo bạn đang đứng khác nhánh cần xóa.\
+	**$ git branch -d <branch_name>** *# Nhánh này đã được merge*\
+	**$ git branch -D <branch_name>** *# Nhánh này chưa được merge*\
+- Xóa nhánh trên remote repository.\
 	**$ git push -d origin <nhanh_cần_xóa>** *# Nhánh này vẫn lưu trên local. Bạn có để push lên remote repository, hoặc xóa luôn*
-5. Đổi tên nhánh\
-- Bước 1: Đổi tên nhánh
-	**$ git branch -M <Tên_mới_cho_nhánh>** *# Đổi tên nhánh tại vị trí nhánh bạn đang đứng*
+5. Đổi tên nhánh
+- Bước 1: Đổi tên nhánh\
+	**$ git branch -M <Tên_mới_cho_nhánh>** *# Đổi tên nhánh tại vị trí nhánh bạn đang đứng*\
 	**$ git branch -M <Tên_nhánh_khác_với vị_trí đứng> <Tên_mới_cho_nhánh>** *# Đổi tên nhánh khác với vị trí bạn đang đứng*
 Bước 2: Đẩy tên mới của nhánh lên remote repository
 	**$ git push -u origin <Tên_mới_của_nhanh>**
