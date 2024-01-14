@@ -90,7 +90,7 @@
 	**$ git add <file_add>**
 - file_add là:*(. hoặc --all)* dùng để thêm tất cả các thay đổi, hoặc bạn có thể add các file bạn cần đẩy lên *
 3. Thực hiện note cho các nội dung thay đổi\
-	**$ git commit -m "<commit_message_here>"**
+	**$ git commit -m "<message>"**
 - Khi bạn lỡ may thực hiện < git add. > và bạn cần loại bỏ bớt đi các file không muốn đẩy lên\
 	**$ git reset**
 		*# Giúp bạn quay lại đước < git add >, bạn sẽ thực hiện add những file cần đẩy lên git*
@@ -98,26 +98,41 @@
 	**$ git push origin <branch_name>**
 # Chỉnh sửa commit
 - Dùng cho trường hợp commit bị sai, không hoàn chỉnh hoặc có vấn đề, bạn muốn loại bỏ nó
-- Tạo một commit mới vẫn dữ được các lịch sử commit trước đó\
-*khi chạy lệnh *$ git revert <commit_2_id>* thì tạo ra một commit mới với tên *Revert"'commit_1'"* và nội dung được copy từ commit_1\
-		*'commit_1' -> 'commit_2' -> 'commit_3 -> Revert"'commit_2'"**
-1.  Lấy key của commit cần chuyển đến\
-	**$ git log**
-2. Chuyển commit mà bạn muốn code bạn thực hiện tại vị trí đấy\
-	**$ git revert <commit_id>**
-3. Thực hiện thay đổi lịch sử commit_id trên remote repository\
-	**$ git push**
-- Lấy nội dung tại commit_id và xóa toàn bộ nội dung và lịch sử commit trước đó
-1.  Lấy key của commit cần chuyển đến\
-	**$ git log**
-2. Chuyển commit mà bạn muốn code bạn thực hiện tại vị trí đấy\
-	**$ git reset --hard <commit_id>**
-3. Thực hiện thay đổi lịch sử commit_id trên remote repository 
-	**$ git push --force**
-- Lấy nội dung tại commit_id và tạo ra một commit mới xóa toàn bộ nội dung và lịch sử commit trước đó
-1. Lấy key của commit cần chuyển đến\
-	**$ git log**
-2. 
+## Tạo một commit mới vẫn dữ được các lịch sử commit trước đó\
+	*khi chạy lệnh $ git revert <commit_2_id> thì tạo ra một commit mới với tên Revert"commit_2'" và nội dung được copy từ commit_1*\
+			old:*'commit_1' -> 'commit_2' -> 'commit_3*\
+			update:*'commit_1' -> 'commit_2' -> 'commit_3 -> Revert"commit_2'"*
+		1.  Lấy key của commit cần chuyển đến\
+			**$ git log**
+		2. Chuyển commit mà bạn muốn code bạn thực hiện tại vị trí đấy\
+			**$ git revert <commit_id>**  *# Cần ấn :wq để thoát màn hình trên cửa sổ CMD*
+		3. Thực hiện thay đổi lịch sử commit_id trên remote repository\
+			**$ git push**
+## Lấy nội dung tại commit_id và xóa toàn bộ nội dung và lịch sử commit trước đó\
+	- *khi chạy lệnh $ git reset --hard <commit_2_id> các commit trước đó sẽ bị xóa*\
+			old:*'commit_1' -> 'commit_2' -> 'commit_3*\
+			update:*'commit_1' -> 'commit_2'*
+		1.  Lấy key của commit cần chuyển đến\
+			**$ git log**
+		2. Chuyển commit mà bạn muốn code bạn thực hiện tại vị trí đấy\
+			**$ git reset --hard <commit_id>**
+		3. Thực hiện thay đổi lịch sử commit_id trên remote repository\\
+			**$ git push --force**
+## Lấy nội dung tại commit_id và tạo ra một commit mới xóa toàn bộ nội dung và lịch sử commit trước đó\
+	- *khi chạy lệnh $ git reset –soft <commit_2_id> các tạo một commit mới (bạn cần thực hiện git commit -m) và commit trước đó sẽ bị xóa*\
+			old:*'commit_1' -> 'commit_2' -> 'commit_3*\
+			update:*'commit_1' -> 'commit_2'*
+		1. Lấy key của commit cần chuyển đến\
+			**$ git log**
+		2. Đưa branch về trạng thái của commit_id được chọn\
+			**$ git reset –-soft <commit_id>**
+		3. Tạo nôi dung cho mommit
+			**$ git commit -m'message"**
+		4. Thực hiện thay đổi lịch sử commit_id trên remote repository\\
+			**$ git push**
+## Note: Sự khác nhau giữ $ git reset --hard và $ git reset --force
+- *git reset --hard* ngoài việc quay về vị trí commit_id đồng thời nội dung ở trong folder cũng loại bỏ tất cả sự thay đổi của file để máp với nội dung tại commit_id
+- *git reset –-soft* ngoài việc quay về vị trí commit_id, nội dung ở trong folder sẽ được dữ nguyên ở commit trước khi reset. Nên khi chọn cách này bạn cần tạo mới một commit mới hoặc lại bỏ các nội dung thay đổi. Khi bạn clone link git vào một folder mới các nội dung ở commit trước reset sẽ không thấy 
 # Kéo code về local
 - Kéo tất cả các thay đổi từ khác với vị trí đứng về local.\
 	**$ git pull origin <nhánh_cần_kéo_về>**
