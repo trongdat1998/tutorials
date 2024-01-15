@@ -99,16 +99,16 @@
 # Chỉnh sửa commit
 - Dùng cho trường hợp commit bị sai, không hoàn chỉnh hoặc có vấn đề, bạn muốn loại bỏ nó
 ## Tạo một commit mới vẫn dữ được các lịch sử commit trước đó
-- khi chạy lệnh $ git revert <commit_2_id> thì tạo ra một commit mới với tên Revert"commit_2'" và nội dung được copy từ commit_1
-		old: commit_1 -> commit_2 -> commit_3
-		update: commit_1 -> commit_2 -> commit_3 -> Revert"commit_2"
-	1. Lấy key của commit cần chuyển đến\
-		**$ git log**
-	2. Chuyển commit mà bạn muốn code bạn thực hiện tại vị trí đấy\
-		**$ git revert <commit_id>**\
-			*# Sử dụng các lệnh VI - ấn :wq để thoát màn hình trên cửa sổ CMD*
-	3. Thực hiện thay đổi lịch sử commit_id trên remote repository\
-		**$ git push**
+- khi chạy lệnh $ git revert <commit_2_id> thì tạo ra một commit mới với tên Revert"commit_2'" và nội dung được copy từ commit_1\
+		old: commit_1 -> commit_2 -> commit_3\
+		update: commit_1 -> commit_2 -> commit_3 -> Revert"commit_2"\
+1. Lấy key của commit cần chuyển đến\
+	**$ git log**
+2. Chuyển commit mà bạn muốn code bạn thực hiện tại vị trí đấy\
+	**$ git revert <commit_id>**\
+		*# Sử dụng các lệnh VI - ấn :wq để thoát màn hình trên cửa sổ CMD*
+3. Thực hiện thay đổi lịch sử commit_id trên remote repository\
+	**$ git push**
 ## Lấy nội dung tại commit_id và xóa toàn bộ nội dung và lịch sử commit trước đó
 	- khi chạy lệnh $ git reset --hard <commit_2_id> các commit trước đó sẽ bị xóa
 			old:commit_1 -> commit_2 -> 'commit_3
