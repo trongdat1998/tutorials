@@ -57,16 +57,16 @@
 - Xem list các branch ở local với các nội dung bạn chưa muốn commit.\
 	**$ git stash list**
 - Xem lại nội dung thay đổi cụ thể ở branch chỉ định .\
-	**$ git stash show stash@{number}**
+	**$ git stash show stash@{number}**\
 		*# number là ứng với số lấy ở $ git stash list*
 - Lấy nội dung ở branch chỉ định vào nhánh vừa checkout đến.\
-	**$ git stash apply stash@{number}**
+	**$ git stash apply stash@{number}**\
 		*# number là ứng với số lấy ở $ git stash list*
 - Xoá toàn bộ các nội dung ở các nhánh chưa commnit lên remote repository.\
 	**$ git stash clear**
 ## Xóa nhánh
 1. Xóa nhánh trên local, sau đó thực hiện xóa nhánh trên remote repository. Bạn cần đảm bảo bạn đang đứng khác nhánh cần xóa.\
-	**$ git branch -d <branch_name>**
+	**$ git branch -d <branch_name>**\
 		*# Nhánh này đã được merge*\
 	**$ git branch -D <branch_name>**
 		*# Nhánh này chưa được merge*
@@ -76,7 +76,7 @@
 ## Đổi tên nhánh
 1. Đổi tên nhánh\
 	**$ git branch -M <Tên_mới_cho_nhánh>**
-		*# Đổi tên nhánh tại vị trí nhánh bạn đang đứng*\
+		*# Đổi tên nhánh tại vị trí nhánh bạn đang đứng*
 	**$ git branch -M <Tên_nhánh_khác_với vị_trí đứng> <Tên_mới_cho_nhánh>** 
 		*# Đổi tên nhánh khác với vị trí bạn đang đứng*
 2. Đẩy tên mới của nhánh lên remote repository\
@@ -98,7 +98,7 @@
 	**$ git push origin <branch_name>**
 # Chỉnh sửa commit
 - Dùng cho trường hợp commit bị sai, không hoàn chỉnh hoặc có vấn đề, bạn muốn loại bỏ nó
-## Tạo một commit mới vẫn dữ được các lịch sử commit trước đó\
+## Tạo một commit mới vẫn dữ được các lịch sử commit trước đó
 	*khi chạy lệnh $ git revert <commit_2_id> thì tạo ra một commit mới với tên Revert"commit_2'" và nội dung được copy từ commit_1*\
 			old:*'commit_1' -> 'commit_2' -> 'commit_3*\
 			update:*'commit_1' -> 'commit_2' -> 'commit_3 -> Revert"commit_2'"*
@@ -108,7 +108,7 @@
 			**$ git revert <commit_id>**  *# Cần ấn :wq để thoát màn hình trên cửa sổ CMD*
 		3. Thực hiện thay đổi lịch sử commit_id trên remote repository\
 			**$ git push**
-## Lấy nội dung tại commit_id và xóa toàn bộ nội dung và lịch sử commit trước đó\
+## Lấy nội dung tại commit_id và xóa toàn bộ nội dung và lịch sử commit trước đó
 	- *khi chạy lệnh $ git reset --hard <commit_2_id> các commit trước đó sẽ bị xóa*\
 			old:*'commit_1' -> 'commit_2' -> 'commit_3*\
 			update:*'commit_1' -> 'commit_2'*
@@ -118,7 +118,7 @@
 			**$ git reset --hard <commit_id>**
 		3. Thực hiện thay đổi lịch sử commit_id trên remote repository\\
 			**$ git push --force**
-## Lấy nội dung tại commit_id và tạo ra một commit mới xóa toàn bộ nội dung và lịch sử commit trước đó\
+## Lấy nội dung tại commit_id và tạo ra một commit mới xóa toàn bộ nội dung và lịch sử commit trước đó
 	- *khi chạy lệnh $ git reset –soft <commit_2_id> các tạo một commit mới (bạn cần thực hiện git commit -m) và commit trước đó sẽ bị xóa*\
 			old:*'commit_1' -> 'commit_2' -> 'commit_3*\
 			update:*'commit_1' -> 'commit_2'*
@@ -131,8 +131,9 @@
 		4. Thực hiện thay đổi lịch sử commit_id trên remote repository\\
 			**$ git push**
 ## Note: Sự khác nhau giữ $ git reset --hard và $ git reset --force
-- *git reset --hard* ngoài việc quay về vị trí commit_id đồng thời nội dung ở trong folder cũng loại bỏ tất cả sự thay đổi của file để máp với nội dung tại commit_id
-- *git reset –-soft* ngoài việc quay về vị trí commit_id, nội dung ở trong folder sẽ được dữ nguyên ở commit trước khi reset. Nên khi chọn cách này bạn cần tạo mới một commit mới hoặc lại bỏ các nội dung thay đổi. Khi bạn clone link git vào một folder mới các nội dung ở commit trước reset sẽ không thấy 
+- Ngoài việc quay về vị trí commit_id chỉ định mà còn có các điểm khác như dưới.
+- *git reset --hard* nội dung ở trong folder cũng loại bỏ tất cả sự thay đổi của file để máp với nội dung tại commit_id. git revert nội dung trong folder cùng tương tự
+- *git reset –-soft* nội dung ở trong folder sẽ được dữ nguyên ở commit trước khi reset. Nên khi chọn cách này bạn cần tạo mới một commit mới hoặc lại bỏ các nội dung thay đổi. Khi bạn clone link git vào một folder mới các nội dung ở commit trước reset sẽ không thấy 
 # Kéo code về local
 - Kéo tất cả các thay đổi từ khác với vị trí đứng về local.\
 	**$ git pull origin <nhánh_cần_kéo_về>**
@@ -140,7 +141,7 @@
 	**$ git pull**
 - Kéo tất cả các thay đổi từ kho lưu trữ từ xa vào branch bạn đang làm việc.\
 	**$ git pull origin**
-- Cách pull chống sung đột
+- Cách pull chống sung đột\
 	**$ git pull --rebase**
 # Hợp nhất code
 1. Di chuyển về nhánh nhận sự hợp nhất.\
