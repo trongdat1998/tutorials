@@ -110,27 +110,27 @@
 3. Thực hiện thay đổi lịch sử commit_id trên remote repository\
 	**$ git push**
 ## Lấy nội dung tại commit_id và xóa toàn bộ nội dung và lịch sử commit trước đó
-	- khi chạy lệnh $ git reset --hard <commit_2_id> các commit trước đó sẽ bị xóa
-			old:commit_1 -> commit_2 -> 'commit_3
-			update:commit_1 -> commit_2
-		1.  Lấy key của commit cần chuyển đến\
-			**$ git log**
-		2. Chuyển commit mà bạn muốn code bạn thực hiện tại vị trí đấy\
-			**$ git reset --hard <commit_id>**
-		3. Thực hiện thay đổi lịch sử commit_id trên remote repository\
-			**$ git push --force**
+- khi chạy lệnh $ git reset --hard <commit_2_id> các commit trước đó sẽ bị xóa\
+		old:commit_1 -> commit_2 -> 'commit_3\
+		update:commit_1 -> commit_2\
+1.  Lấy key của commit cần chuyển đến\
+	**$ git log**
+2. Chuyển commit mà bạn muốn code bạn thực hiện tại vị trí đấy\
+	**$ git reset --hard <commit_id>**
+3. Thực hiện thay đổi lịch sử commit_id trên remote repository\
+	**$ git push --force**
 ## Lấy nội dung tại commit_id và tạo ra một commit mới xóa toàn bộ nội dung và lịch sử commit trước đó
-	- khi chạy lệnh $ git reset –soft <commit_2_id> các tạo một commit mới (bạn cần thực hiện git commit -m) và commit trước đó sẽ bị xóa
-			old: commit_1 -> commit_2 -> commit_3
-			update:commit_1 -> commit_2
-		1. Lấy key của commit cần chuyển đến\
-			**$ git log**
-		2. Đưa branch về trạng thái của commit_id được chọn\
-			**$ git reset –-soft <commit_id>**
-		3. Tạo nôi dung cho mommit
-			**$ git commit -m'message"**
-		4. Thực hiện thay đổi lịch sử commit_id trên remote repository\\
-			**$ git push**
+- khi chạy lệnh $ git reset –soft <commit_2_id> các tạo một commit mới (bạn cần thực hiện git commit -m) và commit trước đó sẽ bị xóa\
+		old: commit_1 -> commit_2 -> commit_3\
+		update:commit_1 -> commit_2\
+	1. Lấy key của commit cần chuyển đến\
+		**$ git log**
+	2. Đưa branch về trạng thái của commit_id được chọn\
+		**$ git reset –-soft <commit_id>**
+	3. Tạo nôi dung cho mommit\
+		**$ git commit -m'message"**
+	4. Thực hiện thay đổi lịch sử commit_id trên remote repository\
+		**$ git push**
 ## Note: Sự khác nhau giữ $ git reset --hard và $ git reset --force
 - Ngoài việc quay về vị trí commit_id chỉ định mà còn có các điểm khác như dưới.
 - *git reset --hard* # nội dung ở trong folder cũng loại bỏ tất cả sự thay đổi của file để máp với nội dung tại commit_id. git revert nội dung trong folder cùng tương tự
