@@ -75,9 +75,9 @@
 		*# Nhánh này vẫn lưu trên local. Bạn có để push lên remote repository lại, hoặc loại bỏ luôn*
 ## Đổi tên nhánh
 1. Đổi tên nhánh\
-	**$ git branch -M <Tên_mới_cho_nhánh>**
+	**$ git branch -M <Tên_mới_cho_nhánh>**\
 		*# Đổi tên nhánh tại vị trí nhánh bạn đang đứng*
-	**$ git branch -M <Tên_nhánh_khác_với vị_trí đứng> <Tên_mới_cho_nhánh>** 
+	**$ git branch -M <Tên_nhánh_khác_với vị_trí đứng> <Tên_mới_cho_nhánh>**\
 		*# Đổi tên nhánh khác với vị trí bạn đang đứng*
 2. Đẩy tên mới của nhánh lên remote repository\
 	**$ git push -u origin <Tên_mới_của_nhánh>**
@@ -92,36 +92,37 @@
 3. Thực hiện note cho các nội dung thay đổi\
 	**$ git commit -m "<message>"**
 - Khi bạn lỡ may thực hiện < git add. > và bạn cần loại bỏ bớt đi các file không muốn đẩy lên\
-	**$ git reset**
+	**$ git reset**\
 		*# Giúp bạn quay lại đước < git add >, bạn sẽ thực hiện add những file cần đẩy lên git*
 4. Đưa code lên remote repository\
 	**$ git push origin <branch_name>**
 # Chỉnh sửa commit
 - Dùng cho trường hợp commit bị sai, không hoàn chỉnh hoặc có vấn đề, bạn muốn loại bỏ nó
 ## Tạo một commit mới vẫn dữ được các lịch sử commit trước đó
-	- *khi chạy lệnh $ git revert <commit_2_id> thì tạo ra một commit mới với tên Revert"commit_2'" và nội dung được copy từ commit_1
-			old:'commit_1' -> 'commit_2' -> 'commit_3
-			update:'commit_1' -> 'commit_2' -> 'commit_3 -> Revert"commit_2'"*
+	- khi chạy lệnh $ git revert <commit_2_id> thì tạo ra một commit mới với tên Revert"commit_2'" và nội dung được copy từ commit_1
+			old: commit_1 -> commit_2 -> commit_3
+			update: commit_1 -> commit_2 -> commit_3 -> Revert"commit_2"
 		1.  Lấy key của commit cần chuyển đến\
 			**$ git log**
 		2. Chuyển commit mà bạn muốn code bạn thực hiện tại vị trí đấy\
-			**$ git revert <commit_id>**  *# Cần ấn :wq để thoát màn hình trên cửa sổ CMD*
+			**$ git revert <commit_id>**\
+				*# Sử dụng các lệnh VI - ấn :wq để thoát màn hình trên cửa sổ CMD*
 		3. Thực hiện thay đổi lịch sử commit_id trên remote repository\
 			**$ git push**
 ## Lấy nội dung tại commit_id và xóa toàn bộ nội dung và lịch sử commit trước đó
-	- *khi chạy lệnh $ git reset --hard <commit_2_id> các commit trước đó sẽ bị xóa
+	- khi chạy lệnh $ git reset --hard <commit_2_id> các commit trước đó sẽ bị xóa
 			old:commit_1 -> commit_2 -> 'commit_3
-			update:commit_1 -> commit_2*
+			update:commit_1 -> commit_2
 		1.  Lấy key của commit cần chuyển đến\
 			**$ git log**
 		2. Chuyển commit mà bạn muốn code bạn thực hiện tại vị trí đấy\
 			**$ git reset --hard <commit_id>**
-		3. Thực hiện thay đổi lịch sử commit_id trên remote repository\\
+		3. Thực hiện thay đổi lịch sử commit_id trên remote repository\
 			**$ git push --force**
 ## Lấy nội dung tại commit_id và tạo ra một commit mới xóa toàn bộ nội dung và lịch sử commit trước đó
-	- *khi chạy lệnh $ git reset –soft <commit_2_id> các tạo một commit mới (bạn cần thực hiện git commit -m) và commit trước đó sẽ bị xóa
+	- khi chạy lệnh $ git reset –soft <commit_2_id> các tạo một commit mới (bạn cần thực hiện git commit -m) và commit trước đó sẽ bị xóa
 			old: commit_1 -> commit_2 -> commit_3
-			update:commit_1 -> commit_2*
+			update:commit_1 -> commit_2
 		1. Lấy key của commit cần chuyển đến\
 			**$ git log**
 		2. Đưa branch về trạng thái của commit_id được chọn\
@@ -145,11 +146,11 @@
 	**$ git pull --rebase**
 # Hợp nhất code
 1. Di chuyển về nhánh nhận sự hợp nhất.\
-	**$  git checkout <branch_mane1>** 
-	*# branch_mane1 là nhánh cần hợp nhất*
+	**$  git checkout <branch_mane1>**\
+		*# branch_mane1 là nhánh cần hợp nhất*
 2. Tiến hành hợp nhất.\
-	**$ git rebase <branch_mane2>** 
-	*# Code từ branch_mane2 được hợp nhất vào branch_mane1*
+	**$ git rebase <branch_mane2>**\
+		*# Code từ branch_mane2 được hợp nhất vào branch_mane1*
 ## [Chú ý]: Tương đồng với merge nhưng có sự khác biệt như sau
 - Merge: Chỉ lấy nội dung commit cuối cùng của hai nhánh, tích hợp tạo thành commit mới. Các commit trước đó được giữ nguyên không thay đổi.
 - Rebase: Lấy code từ branch_mane2, từ những commit ở branch_mane2 tích hợp đồng thời tái tạo lại commit mới ở branch_mane1 (Các commit đã tồn tại bị bỏ đi).
