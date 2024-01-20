@@ -49,7 +49,7 @@
 4. Đẩy nhánh vừa tạo lên remote repository.\
 	**$ git push -u origin <nhánh_vừa_tạo>**
 ## Chuyển đổi sang nhánh mới
-- Chuyển nhánh khi nhánh đấy không có thay đổi gì\
+### Chuyển nhánh khi nhánh đấy không có thay đổi gì\
 	**$ git checkout <tên_nhánh_cần_đến>**
 ### Chuyển nhanh khi nhánh có sự thay đổi của nhánh hiện tại
 - Lưu lại công việc đang làm ở branch này để chuyển sang branch khác (Khi bạn chưa muốn commit code).\
