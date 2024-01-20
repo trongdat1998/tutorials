@@ -72,7 +72,7 @@
 		*# Nhánh này chưa được merge*
 2. Xóa nhánh trên remote repository.\
 	**$ git push -d origin <nhanh_cần_xóa>**
-		*# Nhánh này vẫn lưu trên local. Bạn có để push lên remote repository lại, hoặc loại bỏ luôn*
+		*# Khi bạn bỏ qua 1. thì nhánh này vẫn lưu trên local. Bạn có để push lên remote repository lại, hoặc loại bỏ luôn*
 ## Đổi tên nhánh
 1. Đổi tên nhánh\
 	**$ git branch -M <Tên_mới_cho_nhánh>**\
@@ -83,7 +83,10 @@
 	**$ git push -u origin <Tên_mới_của_nhánh>**
 3. Xóa nhánh cũ đi\
 	**$ git push -d origin <Tên_nhánh_cũ>**
-# Đẩy code lên Git
+- Note: Khi xóa nhánh và đổi tên nhánh những người khác không thực hiện được gì với nhánh cũ, nên cần checkout sang nhánh vừa đổi
+# Làm việc với commmit
+## Tạo một commit mới
+- Tức bạn thực hiện việc thay đổi code và lưu thay đổi đấy trên remote repository
 1. Khởi tạo repository (nếu chưa có)\
 	**$ git init**
 2. Thêm các file đã có sự thay đổi\
@@ -96,9 +99,9 @@
 		*# Giúp bạn quay lại đước < git add >, bạn sẽ thực hiện add những file cần đẩy lên git*
 4. Đưa code lên remote repository\
 	**$ git push origin <branch_name>**
-# Chỉnh sửa commit
+## Chỉnh sửa commit
 - Dùng cho trường hợp commit bị sai, không hoàn chỉnh hoặc có vấn đề, bạn muốn loại bỏ nó
-## Tạo một commit mới vẫn dữ được các lịch sử commit trước đó
+### Tạo một commit mới vẫn dữ được các lịch sử commit trước đó
 - khi chạy lệnh $ git revert <commit_2_id> thì tạo ra một commit mới với tên Revert"commit_2'" và nội dung được copy từ commit_1\
 		old: commit_1 -> commit_2 -> commit_3\
 		update: commit_1 -> commit_2 -> commit_3 -> Revert"commit_2"\
@@ -109,7 +112,7 @@
 		*# Sử dụng các lệnh VI - ấn :wq để thoát màn hình trên cửa sổ CMD*
 3. Thực hiện thay đổi lịch sử commit_id trên remote repository\
 	**$ git push**
-## Lấy nội dung tại commit_id và xóa toàn bộ nội dung và lịch sử commit trước đó
+### Lấy nội dung tại commit_id và xóa toàn bộ nội dung và lịch sử commit trước đó
 - khi chạy lệnh $ git reset --hard <commit_2_id> các commit trước đó sẽ bị xóa\
 		old:commit_1 -> commit_2 -> 'commit_3\
 		update:commit_1 -> commit_2\
@@ -119,7 +122,7 @@
 	**$ git reset --hard <commit_id>**
 3. Thực hiện thay đổi lịch sử commit_id trên remote repository\
 	**$ git push --force**
-## Lấy nội dung tại commit_id và tạo ra một commit mới xóa toàn bộ nội dung và lịch sử commit trước đó
+### Lấy nội dung tại commit_id và tạo ra một commit mới xóa toàn bộ nội dung và lịch sử commit trước đó
 - khi chạy lệnh $ git reset –soft <commit_2_id> các tạo một commit mới (bạn cần thực hiện git commit -m) và commit trước đó sẽ bị xóa\
 		old: commit_1 -> commit_2 -> commit_3\
 		update:commit_1 -> commit_2\
@@ -131,7 +134,7 @@
 		**$ git commit -m'message"**
 	4. Thực hiện thay đổi lịch sử commit_id trên remote repository\
 		**$ git push**
-## Note: Sự khác nhau giữ $ git reset --hard và $ git reset --force
+### Note: Sự khác nhau giữ $ git reset --hard và $ git reset --force
 - Ngoài việc quay về vị trí commit_id chỉ định mà còn có các điểm khác như dưới.
 - *git reset --hard* # nội dung ở trong folder cũng loại bỏ tất cả sự thay đổi của file để máp với nội dung tại commit_id. git revert nội dung trong folder cùng tương tự
 - *git reset –-soft* # nội dung ở trong folder sẽ được dữ nguyên ở commit trước khi reset. Nên khi chọn cách này bạn cần tạo mới một commit mới hoặc lại bỏ các nội dung thay đổi. Khi bạn clone link git vào một folder mới các nội dung ở commit trước reset sẽ không thấy 
