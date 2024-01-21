@@ -164,7 +164,8 @@
 	**$ git submodule add <url>**
 3. Khi add các submodule thì các project con không có gì, bạn cần chạy lệnh\
 	**$ git submodule update --init --recursive**
-4. Thực hiện tạo mới commit
+4. Thực hiện tạo mới commit như thường\
+	** git add, commit, push**
 - Note: Bạn muốn thay đổi cá project con thì bạn vào chính project, chứ không được vào project all update code nó sẽ gây lỗi
 - Để cập nhật các submodule khi có sự update\
 	**$ git submodule update --recursive --remote --merge**
