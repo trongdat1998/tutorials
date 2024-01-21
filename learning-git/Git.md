@@ -138,6 +138,8 @@
 - Ngoài việc quay về vị trí commit_id chỉ định mà còn có các điểm khác như dưới.
 - *git reset --hard* # nội dung ở trong folder cũng loại bỏ tất cả sự thay đổi của file để máp với nội dung tại commit_id. git revert nội dung trong folder cùng tương tự
 - *git reset –-soft* # nội dung ở trong folder sẽ được dữ nguyên ở commit trước khi reset. Nên khi chọn cách này bạn cần tạo mới một commit mới hoặc lại bỏ các nội dung thay đổi. Khi bạn clone link git vào một folder mới các nội dung ở commit trước reset sẽ không thấy 
+## Chèn commit vào một vị trí bất kỳ
+- TODO
 # Kéo code về local
 - Kéo tất cả các thay đổi từ khác với vị trí đứng về local.\
 	**$ git pull origin <nhánh_cần_kéo_về>**
