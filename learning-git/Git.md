@@ -49,7 +49,7 @@
 4. Đẩy nhánh vừa tạo lên remote repository.\
 	**$ git push -u origin <nhánh_vừa_tạo>**
 ## Chuyển đổi sang nhánh mới
-### Chuyển nhánh khi nhánh đấy không có thay đổi gì\
+- Chuyển nhánh khi nhánh đấy không có thay đổi gì\
 	**$ git checkout <tên_nhánh_cần_đến>**
 ### Chuyển nhanh khi nhánh có sự thay đổi của nhánh hiện tại
 - Lưu lại công việc đang làm ở branch này để chuyển sang branch khác (Khi bạn chưa muốn commit code).\
@@ -157,3 +157,15 @@
 ## [Chú ý]: Tương đồng với merge nhưng có sự khác biệt như sau
 - Merge: Chỉ lấy nội dung commit cuối cùng của hai nhánh, tích hợp tạo thành commit mới. Các commit trước đó được giữ nguyên không thay đổi.
 - Rebase: Lấy code từ branch_mane2, từ những commit ở branch_mane2 tích hợp đồng thời tái tạo lại commit mới ở branch_mane1 (Các commit đã tồn tại bị bỏ đi).
+# Liên kết các dự án vào với nhau
+- Khi bạn muốn nhóm các project lại với nha thành một project tổng thì bạn cần dùng đên Git Submodules
+1. Tạo một remote repository trên  git để thực hiện tạo một project tổng. Các project nhỏ khác đã được tạo trên Git
+2. Thực hiện nhóm các project\
+	**$ git submodule add <url>**
+3. Khi add các submodule thì các project con không có gì, bạn cần chạy lệnh\
+	**$ git submodule update --init --recursive**
+4. Thực hiện tạo mới commit
+- Note: Bạn muốn thay đổi cá project con thì bạn vào chính project, chứ không được vào project all update code nó sẽ gây lỗi
+- Để cập nhật các submodule khi có sự update\
+	**$ git submodule update --recursive --remote --merge**
+**
