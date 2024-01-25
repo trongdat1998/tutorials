@@ -143,7 +143,7 @@
 ## Thay đổi nội dung khi commit
 - Khi bạn lỡ commit nhưng nhận ra nội dung bị sai và cần chỉnh sửa và bạn vẫn muốn dữ commit không muốn xóa đi. Và chỉ sửa lại commit cuối cùng
 1. Add lại những nội dung cần chỉnh sửa lại\
-	**$ git add <file_cần_update_lại>
+	**$ git add <file_cần_update_lại>**
 2. Sửa lại nội dung commit\
 	**$ git commit --amend --no-edit**
 3. Đẩy nội dung cần chỉnh sửa lại commit lên repo\
