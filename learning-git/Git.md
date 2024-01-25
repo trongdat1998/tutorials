@@ -140,6 +140,15 @@
 - *git reset –-soft* # nội dung ở trong folder sẽ được dữ nguyên ở commit trước khi reset. Nên khi chọn cách này bạn cần tạo mới một commit mới hoặc lại bỏ các nội dung thay đổi. Khi bạn clone link git vào một folder mới các nội dung ở commit trước reset sẽ không thấy 
 ## Chèn commit vào một vị trí bất kỳ
 - TODO
+## Thay đổi nội dung khi commit
+- Khi bạn lỡ commit nhưng nhận ra nội dung bị sai và cần chỉnh sửa và bạn vẫn muốn dữ commit không muốn xóa đi. Và chỉ sửa lại commit cuối cùng
+1. Add lại những nội dung cần chỉnh sửa lại\
+	**$ git add <file_cần_update_lại>
+2. Sửa lại nội dung commit\
+	**$ git commit --amend --no-edit**
+3. Đẩy nội dung cần chỉnh sửa lại commit lên repo\
+	**$ git push -f origin**
+- TODO
 # Kéo code về local
 - Kéo tất cả các thay đổi từ khác với vị trí đứng về local.\
 	**$ git pull origin <nhánh_cần_kéo_về>**
