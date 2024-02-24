@@ -19,7 +19,7 @@
 - Một chương trình JavaScript cũng giống như chương trình viết bằng các ngôn ngữ khác
 	+ Một chương trình JavaScript bao gồm nhiều câu lệnh
 	+ Một câu lệnh được tạo nên từ các toán tử, từ định danh, biến...
-- Mã JavaScript được viết trong thẻ <script> và đặt trong thẻ <head/> hoặc (và) <body/>
+- Mã JavaScript được viết trong thẻ <script> và đặt trong thẻ <head/> hoặc (và) <body/>\
 	[Chú ý]: Nên đặt mã JavaScript trong thẻ <script/> đặt ở cuối phần body để đảm bảo tất cả các thành phần được load
 ## Công cụ để lặp trình JavaScript
 - JavaScript là ngôn ngữ thông dịch, bộ thông dịch được tích hợp sẵn trên  trình duyệt nên không cần bất cứ công cụ đặc biệt nào để lập trình
@@ -31,20 +31,20 @@
 # Câu lệnh JavaScript
 - Câu lệnh JavaScript chia làm hai loại
 	+ Câu lệnh đơn\
-	var x =4;
-	+ Câu lệnh kép
-	if( x ==1){ 
-		//Viết câu lệnh ở đây 
-	} else { 
-		//Viết câu lệnh ở đây 
-	}
+	*var x =4;*
+	+ Câu lệnh kép\
+	*if( x ==1){ *\
+		*//Viết câu lệnh ở đây *\
+	*} else { *\
+		*//Viết câu lệnh ở đây *\
+	*}*
 ## 	Hàm (function)
 - JavaScript cung cấp nhiều hàm dựng sẵn (built-in function)
 	+ alert()
-- JavaScript cũng cho phép người dùng tự định nghĩa hàm
-	*function ham() {
-	   //Thân hàm
-	}*
+- JavaScript cũng cho phép người dùng tự định nghĩa hàm\
+	*function ham() {*\
+	   *//Thân hàm*\
+	*}*
 ## Lưu mã JavaScript vào file bên ngoài
 - Để viết chương trình JavaScript thì có hai cách
 	+ Tạo chung với HTML
@@ -53,5 +53,5 @@
 	+ B1. Tạo file txt mới
 	+ B2. Viết mã JavaScript
 	+ B3. Đổi file thành file js
-	+ B4. Gán địa chỉ của file cho thuộc tính
+	+ B4. Gán địa chỉ của file cho thuộc tính\
 [Chú ý]: Nên để file js và html cùng một thư mục
