@@ -31,7 +31,7 @@
 # Câu lệnh JavaScript
 - Câu lệnh JavaScript chia làm hai loại
 	+ Câu lệnh đơn\
-	*var x =4;*
+	*var x = 4;*
 	+ Câu lệnh kép\
 	*if( x ==1){ *\
 		*//Viết câu lệnh ở đây *\

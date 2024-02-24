@@ -35,11 +35,11 @@
 - Ký tự đặc biệt
 |	Ký tự	|	giải thích	|
 |:----------|:--------------|
-|	\'	|	'	|
-|	\"	|	"	|
-|	\b	|	Dấu cách|
-|	\t	|	Dấu tab	|
-|	\n	|	Xuống dòng	|
+|	\'		|	'			|
+|	\"		|	"			|
+|	\b		|	Dấu cách	|
+|	\t		|	Dấu tab		|
+|	\n		|	Xuống dòng	|
 ## Các thuộc tính và phương thức của String
 - Thuộc tính *length*: Đếm số ký tự\
 	*var x = "Toi la String."*\
