@@ -22,10 +22,10 @@
 - isNAN(): Xác định xem tham số truyền vào có phải là số hay không
 	+ Nếu là số, trả về False
 	+ Nếu không phải là số, trả về True
-- Lớp tiện ích *math*
+- Lớp tiện ích *math*\
 |		Phương thức		|		Giải thích		|		Ví dụ		|		Kết quả		|
 |:----------------------|:----------------------|:------------------|:------------------|
-|Math.random()|Trả về số ngẫu nhiên trong khoảng từ o đến 1|||
+|Math.random()			|Trả về số ngẫu nhiên trong khoảng từ o đến 1| | |
 |Math.abs(x)|Trả về giá trị tuyệt đối của x|Math.abs(-2)|2|
 |Math.pow(x,y)|Trả về giá trị của x mũ y|Math.pow(2,3)|8|
 |Math.round(x)|Trả về giá trị làm tròn của x|Math.round(2.6)|3|

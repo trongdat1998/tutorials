@@ -1,10 +1,11 @@
-# 1.JavaScript là gì?
-- HTML:nội dung
-- CSS: Cách trình bày
--  JavaScript; Hành động của một web
--> JavaScript hồi đáp lại các tương tác của người dùng:
-+ * Khi người dùng nhấn chuột*
-+ * Khi người dùng nhấn vào menu*
+# JavaScript là gì?
+- Mỗi trang web gồm 3 thành phần
+	+ Phần nội dung (HTML)
+	+ Phần trình bày (CSS)
+	+ Phần hành động (JavaScript)
+- JavaScript hồi đáp lại các tương tác của người dùng:
+	+ Khi người dùng nhấn chuột
+	+ Khi người dùng nhấn vào menu
 - JavaScript không thể kết nối đến một database server
 ## ECMAScript (European Computer Manufactures)
 - Là tài liệu đăc tả (phiên bản) đầu tiên cho JavaScript
@@ -27,7 +28,7 @@
 - JavaScript phân biệt chữ hoa chữ thường
 - JavaScript bỏ qua các ký tự cách
 - Ký tự dấu chấm phẩy (;) để kết thúc một dòng lệnh. Ký tự này là bắt buộc
-# 3.Câu lệnh JavaScript
+# Câu lệnh JavaScript
 - Câu lệnh JavaScript chia làm hai loại
 	+ Câu lệnh đơn\
 	var x =4;
