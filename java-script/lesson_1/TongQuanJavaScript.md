@@ -33,11 +33,11 @@
 	+ Câu lệnh đơn\
 	*var x = 4;*
 	+ Câu lệnh kép\
-	~~if( x ==1){
+	`if( x ==1){
 		*//Viết câu lệnh ở đây 
 	} else { 
 		*//Viết câu lệnh ở đây 
-	}~~
+	}`
 ## 	Hàm (function)
 - JavaScript cung cấp nhiều hàm dựng sẵn (built-in function)
 	+ alert()
