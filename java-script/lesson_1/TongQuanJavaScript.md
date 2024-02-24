@@ -30,11 +30,11 @@
 - Ký tự dấu chấm phẩy (;) để kết thúc một dòng lệnh. Ký tự này là bắt buộc
 # Câu lệnh JavaScript
 - Câu lệnh JavaScript chia làm hai loại
-	+ Câu lệnh đơn\
+	+ Câu lệnh đơn
 	```js
 	var x = 4;
 	```
-	+ Câu lệnh kép\
+	+ Câu lệnh kép
 	```js
 	if( x ==1){<br>
 		*//Viết câu lệnh ở đây <br>
@@ -45,8 +45,7 @@
 ## 	Hàm (function)
 - JavaScript cung cấp nhiều hàm dựng sẵn (built-in function)
 	+ alert()
-- JavaScript cũng cho phép người dùng tự định nghĩa hàm\
-	
+- JavaScript cũng cho phép người dùng tự định nghĩa hàm
 	```js
 	function ham() {
 	   *//Thân hàm*\

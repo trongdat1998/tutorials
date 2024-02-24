@@ -4,11 +4,15 @@
 - Cách đặt tên biến
 	+ Tên biến bao gồm chữ cái và số, nhưng không được bắt  đầu bằng số
 	+ Tên biến không bao gồm dấu cách và dấu câu, ngoại trừ dấu gạch dưới (_).
-- Có thể khai báo nhiều biến trên một dòng\
-	*var x, y, zeta;*
+- Có thể khai báo nhiều biến trên một dòng
+	```js
+	var x, y, zeta;
+	```
 - Có thể vừa khai báo vừa khởi tạo giá trị cho biến
-	*var x =1;*\
-	*var x =1, y ="hello";*
+	```js
+	var x =1;
+	var x =1, y ="hello";
+	```
 # Kiểu dữ liệu
 - JavaScript hỗ trợ những kiểu dữ liệu sau
  + Kiểu số
@@ -22,9 +26,10 @@
 - isNAN(): Xác định xem tham số truyền vào có phải là số hay không
 	+ Nếu là số, trả về False
 	+ Nếu không phải là số, trả về True
-- Lớp tiện ích *math*\
-|		Phương thức		|		Giải thích		|		Ví dụ		|		Kết quả		|
-|:----------------------|:----------------------|:------------------|:------------------|
+- Lớp tiện ích math.
+
+|		Phương thức		|			Giải thích			|		Ví dụ		|		Kết quả		|
+|:---------------------:|:-----------------------------:|:-----------------:|:------------------|
 |Math.random()			|Trả về số ngẫu nhiên trong khoảng từ o đến 1| | |
 |Math.abs(x)|Trả về giá trị tuyệt đối của x|Math.abs(-2)|2|
 |Math.pow(x,y)|Trả về giá trị của x mũ y|Math.pow(2,3)|8|
@@ -33,6 +38,7 @@
 - String được bao quanh bởi cặp dấu nháy kép\
 	*"Hello word"*
 - Ký tự đặc biệt
+
 |	Ký tự	|	giải thích	|
 |:----------|:--------------|
 |	\'		|	'			|
@@ -44,6 +50,6 @@
 - Thuộc tính *length*: Đếm số ký tự\
 	*var x = "Toi la String."*\
 	*alert(x.length); // kq: 14*
-	
+
 
 
