@@ -1,4 +1,4 @@
-# TypeScript lad gì?
+# TypeScript là gì?
 - Là ngôn ngữ lập trình
 - Siêu ngôn ngữ (superset) của JavaScript
 - Được compile (biên dịch) qua Javascripts (ES5 hoặc ES6) bởi trình biên dịch.
@@ -17,6 +17,7 @@
 - Dynamic Typed languageà loại ngôn ngữ lập trình cho phép thay đổi kiểu biến tùy biến. Thích thay thế nào cũng được.
 - Dynamic là việc kiểm tra kiểu được thực hiện trong lúc runtime thay vì compile time. 
 - [Chú ý]: 3 kiểu ở trên xẽ được khai báo trong các ngôn ngữ sẽ khác nhau
+
 | 					TypeScript				 	|	 				JavaScript				 	|
 |:----------------------------------------------|:----------------------------------------------|
 |strong typing: static và dymanic type	|Chỉ làm việc với kiểu động (dynamic)	|
