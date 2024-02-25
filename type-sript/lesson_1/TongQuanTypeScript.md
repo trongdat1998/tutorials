@@ -13,8 +13,12 @@
 - TypeScript dễ học
 - Thích hợp xây dựng ứng dụng lớn nhanh chóng, dễ bảo trì và có khả năng tái sử dụng
 # Khác nhau giữa TypeScript và JavaScript
-| 				TypeScript			 	|	 			JavaScript			 	|
-|:--------------------------------------|:--------------------------------------|
+- Strong typed language hoặc Static Typed language, là những ngôn ngữ yêu cầu bạn phải khai báo kiểu cho biến trước khi gán value.
+- Dynamic Typed languageà loại ngôn ngữ lập trình cho phép thay đổi kiểu biến tùy biến. Thích thay thế nào cũng được.
+- Dynamic là việc kiểm tra kiểu được thực hiện trong lúc runtime thay vì compile time. 
+- [Chú ý]: 3 kiểu ở trên xẽ được khai báo trong các ngôn ngữ sẽ khác nhau
+| 					TypeScript				 	|	 				JavaScript				 	|
+|:----------------------------------------------|:----------------------------------------------|
 |strong typing: static và dymanic type	|Chỉ làm việc với kiểu động (dynamic)	|
 |Được phát triển bởi Anders Hejlsberg -2012|Được phát triển bởiNetscape năm 1995|
 |Phần mở rộng của tênfile là **".ts"**.	|Phần mở rộng của tênfile là **".js".**	|
@@ -23,3 +27,18 @@
 |Hỗ trợ OOP dựa vào classes, interfaces, inheritance, generics,….|Chỉ là ngôn ngữ kịch bản (scripting language).|
 |Kiến thức về script bắt buộc			|Không cần kinh nghiệm về script trước đó|
 |Cài đặt thông qua npm					|Không cần cài đặt.						|
+#Cài đặt TypeScript
+## Lựa chọn IDE
+- Visual Studio Code
+## Cài đặt NodeJs
+<https://nodejs.org/en/download/>
+- Kiểm tra version npm\
+	**$ npm -v or npm --version**
+- Kiểm tra version node\
+	**$ node -v or node --version**
+## Cài đặt TypeScript
+<https://www.typescriptlang.org/>
+- Lệnh cài đặt TypeScript\
+	** npm install -g typescript**
+- Kiểm tra version typescript\
+	**$ tsc -v or tsc --version**
