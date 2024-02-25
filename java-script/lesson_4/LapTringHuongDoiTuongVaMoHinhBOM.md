@@ -57,8 +57,8 @@
 ## Đối tượng Navigator
 - Cung cấp các thông tin về trình duyệt. Mỗi trình duyệt có cách thức thi hành mã JavaScript riêng
 
-|       Thuộc tính      |           Giải thích          |
-|:----------------------|:------------------------------|
+|        Thuộc tính      |           Giải thích          |
+|:-----------------------|:------------------------------|
 |appCodeName    |Trả về mã của trình duyệt|
 |appName    |Trả về tên của trình duyệt|
 |appVersion     |Trả về phiên bản của trình duyệt|
@@ -71,8 +71,8 @@
 ## Đối tượng History
 - Chứa thông tin về các URL được người dùng truy cập
 
-|       Thuộc tính      |           Giải thích          |
-|:----------------------|:------------------------------|
+|        Thuộc tính      |           Giải thích          |
+|:-----------------------|:------------------------------|
 |length |Trả về số lượng URL trong danh sách History|
 
 |       Phương thức      |           Giải thích          |

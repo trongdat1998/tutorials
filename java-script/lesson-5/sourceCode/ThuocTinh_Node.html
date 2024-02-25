@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Hi</title>
+    </head>
+    <body>
+        <div id="dHoa">
+            <p>Hoa Hong</p>
+            <p>Hoa Lan</p>
+        </div>
+        <script type="text/javascript">
+            var pHoa = document.getElementById("dHoa");
+            document.write("Ten node: " + pHoa.nodeName + "</br>");
+            document.write("Gia tri của node: " + pHoa.nodeValue + "</br>");
+            document.write("Node cha: " + pHoa.parentNode.nodeName + "</br>");
+            document.write(
+                "Node con dau tien: " + pHoa.firstChild.innerText + "</br>"
+            );
+            document.write(
+                "Node con thu hai: " +
+                pHoa.childNodes[1].childNodes[0].nodeValue +
+                "</br>"
+            );
+            pHoa.childNodes[1].innerText = "Hoa phuong vi";
+        </script>
+    </body>
+</html>
