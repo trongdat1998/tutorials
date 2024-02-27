@@ -28,7 +28,7 @@
 |Hỗ trợ OOP dựa vào classes, interfaces, inheritance, generics,….|Chỉ là ngôn ngữ kịch bản (scripting language).|
 |Kiến thức về script bắt buộc			|Không cần kinh nghiệm về script trước đó|
 |Cài đặt thông qua npm					|Không cần cài đặt.						|
-#Cài đặt TypeScript
+# Cài đặt TypeScript
 ## Lựa chọn IDE
 - Visual Studio Code
 ## Cài đặt NodeJs
