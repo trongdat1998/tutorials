@@ -27,7 +27,7 @@ Tổng quan: Một ngoại lệ là một lỗi phát sinh tại thời điểm 
   ```
 - Một lệnh **truy** không thể đứng 1 mình nó bắt buộc phải có **catch** hay **finally**, hay cả 2.
 - Một lệnh **truy** có thể **kết hợp** với nhiều **hơn một lệnh catch**. Tuy nhiên, mỗi lệnh catch cần bắt một kiểu ngoại lệ khác nhau, nếu không chương trình xẽ bị lỗi
-# 3.2. Hậu quả của một ngoại lệ không được bắt
+## 3.2. Hậu quả của một ngoại lệ không được bắt
 - Việc bắt ngoại lệ ngăn không cho chương trình dừng thực thi một cách bất thường.
 - Nếu lỗi sảy ra thì máy ảo Java (JWM) sẽ làm nhiệm vụ này. Cơ chế mặc định của JVM là dừng thư thi chương trình và hiển thị dò vết ngăn xếp (stack trace) cùng thông báo lỗi (error message)
 ## 3.3. Sử dụng nhiều lệnh catch
