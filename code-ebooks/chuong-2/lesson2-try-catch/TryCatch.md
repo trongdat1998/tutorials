@@ -49,7 +49,8 @@ Tổng quan: Một ngoại lệ là một lỗi phát sinh tại thời điểm 
     ```java
     throw exceptOb;
     ```
-# 5. Tìm hiểu về Throwable
+    Ở đây, exceptOb là đối tượng của lớp ngoại lệ bắt ngồn từ **Throwable**
+## 5. Tìm hiểu về Throwable
 - Tất cả các ngoại lệ đều được hỗ trợ các phương thức do Throwable định nghĩa.
 - Hai phương thức hay nhất được Throwable định nghĩa là: **printStackTrace() và toString()**.
 
