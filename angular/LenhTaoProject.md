@@ -4,24 +4,20 @@
 - Nó tự động cấu hình các file và package của dự án angular cho chúng ta một cách tự động
 - Angular Cli để tạo các components, directive hay service vào trong dự án có sẵn chỉ bằng 1 dòng lệnh
 ## Cài đặt Angular Cli và tạo một dự án Angular
-- Cài đặt Angular Cli
+- Cài đặt Angular Cli\
+    **$ npm install -g @angular/cli@latest**
+- Kiểm tra phiên bản Angular Cli\
+    **$ ng --version**
+- Tạo dự án Angular\
+    **$ ng new [NameProject]**
+- Biên dịch dự án\
+    **$ ng serve**
 
-    npm install -g @angular/cli@latest
-- Kiểm tra phiên bản Angular Cli
-
-    ng --version
-- Tạo dự án Angular
-
-    ng new [NameProject]
-- Biên dịch dự án
-
-    ng serve
-
-    ng serve --host 0.0.0.0 --port [Number]
+    **$ ng serve --host 0.0.0.0 --port [Number]**
 ## Các lệnh Command trong Angular CLI
-### Tạo dự án mới
-
-    ng new [nameProject]
+### Tạo dự án Angular
+- Tạo một dự án mới\
+    **$ ng new [nameProject]**
 - Để biết thêm cá options đi kèm có thêm xem thêm link dưới
 
     <https://angular.io/cli/new>
