@@ -14,8 +14,7 @@
     **$ ng serve**
 
     **$ ng serve --host 0.0.0.0 --port [Number]**
-## Các lệnh Command trong Angular CLI
-### Tạo dự án Angular
+## Các bước tạo project Angular CLI
 - Tạo một dự án mới\
     **$ ng new [nameProject]**
 - Để biết thêm cá options đi kèm có thêm xem thêm link dưới
