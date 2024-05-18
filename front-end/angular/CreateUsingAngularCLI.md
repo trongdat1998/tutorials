@@ -10,6 +10,8 @@
     **$ ng --version**
 - Tạo dự án Angular\
     **$ ng new [NameProject]**
+	+ Ở bản angular 17 thì không còn tạo app.moudule, nếu quen dùng app.moudule thì cần thêm\
+	**--no-standalone**
 - Biên dịch dự án\
     **$ ng serve**
 
