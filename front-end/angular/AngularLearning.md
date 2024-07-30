@@ -1,16 +1,38 @@
-# Angular Cli để tạo dự án Angular?
+
+# Sự khác biệt giữa Angular và AngularJS
+
+|               |           Angular         |          AngularJS        |
+|:--------------|:--------------------------|:--------------------------|
+|   Năm phát hành   | 2009    |   2016    |
+|   Nhà phát triển  |Google (Đã ngừng hỗ trợ)|  Google|
+|   Ngôn ngữ phát triển|    	JavaScript| TypeScript của Microsoft|
+|   Công cụ mẫu|    AngularJS sở hữu rất nhiều chỉ thị| Angular cũng có các chỉ thị tiêu chuẩn, nhưng chúng được sử dụng theo cách khác với AngularJ|
+|   Hỗ trợ trình duyệt| Không hỗ trợ trên các trình duyệt di động|  Được hỗ trợ bởi tất cả các trình duyệt phổ biến|
+|   Ứng dụng|   Không dễ quản lý như Angular, nhưng lý tưởng cho các ứng dụng nhỏ.| Dễ dàng hơn để xây dựng và duy trì các ứng dụng lớn.|
+|   Cấu hình Route| 	Sử dụng $ routeprovider.when () cho cấu hình định tuyến|    Sử dụng @Route Config {(…)} để cấu hình định tuyến|
+|   Hiệu suất|  Chậm|   	Nhanh hơn AngularJS|
+- Ví dụ về công cụ mẫu
+    + AngularJS: Các chỉ thị thường bắt đầu bằng ng-...\
+    ng-model tạo rằng buộc hai chiều\
+    ng-bind tạo rằng buộc một chiều
+    + Angular\
+    ng-Model, nếu viết nó trong ngoặc “[]”, bạn sẽ nhận được ràng buộc một chiều\
+                Còn viêt nó trong “[()]” thì sẽ tạo được ràng buộc hai chiều.
+				
+- Note: Angular Cli để tạo dự án Angular?
+
 ## Angular Cli là gì?
 - Chúng ta sử dụng tool Angular Cli để giúp chúng ta tạo dự án một cách nhanh chóng.
 - Nó tự động cấu hình các file và package của dự án angular cho chúng ta một cách tự động
 - Angular Cli để tạo các components, directive hay service vào trong dự án có sẵn chỉ bằng 1 dòng lệnh
-## Cài đặt Angular Cli và tạo một dự án Angular
+# Cài đặt Angular Cli và tạo một dự án Angular
 - Cài đặt Angular Cli\
     **$ npm install -g @angular/cli@latest**
 - Kiểm tra phiên bản Angular Cli\
     **$ ng --version**
 - Tạo dự án Angular\
     **$ ng new [NameProject]**
-	+ Ở bản angular 17 thì không còn tạo app.moudule, nếu quen dùng app.moudule thì cần thêm\
+	+ Ở bản angular 17 thì không còn tạo app.moudule, nếu quen dùng app.moudule thì cần lệnh dưới khi tạo dự án Angular\
 	**--no-standalone**
 - Biên dịch dự án\
     **$ ng serve**
@@ -82,3 +104,39 @@
     + *app.component.ts* : file này dùng cho việc testing (kiểm thử).
     + *app.module.ts* : file dùng để cấu hình cho module app.
     + *app-routing.module.ts* : file này dùng để điều hướng.
+	
+##Các lệnh CLI Command dùng để tạo dự án bằng dòng lệnh
+
+### ng generate
+- Mỗi loại thành phần trong "ng generate" có tác dụng và mục đích riêng, giúp bạn xây dựng và tổ chức ứng dụng của mình một cách hiệu quả và dễ dàng bảo trì
+- Nếu bạn không muốn tạo fiel 'spec.ts' thì ở mỗi thành phần cần có thêm lệnh
+	--skip-tests
+	<https://angular.io/cli/generate>
+### 1. Component
+- Component là một lớp nó thường hiểu như là controller tương tác giao diện người dùng.
+- Một component thường có 3 thành phần chính là code TypeScript, template HTML và CSS
+- Lệnh dùng để tạo component
+	ng generate component [name]
+	ng g c [name]
+### 2. Module
+- Module là cách chia nhỏ các thành phần ứng dụng (giống package trong Java)
+- Lệnh dùng đẻ tạo module
+	ng generate module [name]
+	ng g m [name]
+### 3. Service
+-  Service là các class độc lập được sử dụng để chia sẻ logic và dữ liệu giữa các components trong ứng dụng.
+ Service thường được sử dụng để tương tác với dữ liệu từ các nguồn bên ngoài như APIs hoặc lưu trữ dữ liệu địa phương.
+- Lệnh tạo service
+	ng generate service [name]
+	ng g s [name]
+### 4. Guard 
+- Guards là các trình giám sát (interceptor) được sử dụng để kiểm soát việc điều hướng trong ứng dụng.
+- Lệnh tạo guard
+	ng generate guard [name] 
+	ng generate g [name]
+### 5. Interceptor
+- TODO
+- Lệnh tạo interceptor
+	ng generate interceptor [name]
+### 4. Directive
+- Directives có thể hiểu như là các đoạn mã typescript (hoặc javascript) kèm theo cả HTML và khi gọi thì gọi như là HTML luôn
