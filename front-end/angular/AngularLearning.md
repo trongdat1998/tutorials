@@ -105,11 +105,10 @@
     + *app.module.ts* : file dùng để cấu hình cho module app.
     + *app-routing.module.ts* : file này dùng để điều hướng.
 	
-##Các lệnh CLI Command dùng để tạo dự án bằng dòng lệnh
-
-### ng generate
-- Mỗi loại thành phần trong "ng generate" có tác dụng và mục đích riêng, giúp bạn xây dựng và tổ chức ứng dụng của mình một cách hiệu quả và dễ dàng bảo trì
-- Nếu bạn không muốn tạo fiel 'spec.ts' thì ở mỗi thành phần cần có thêm lệnh
+## Các lệnh CLI Command dùng để tạo dự án bằng dòng lệnh
+- ng generate
++  Mỗi loại thành phần trong "ng generate" có tác dụng và mục đích riêng, giúp bạn xây dựng và tổ chức ứng dụng của mình một cách hiệu quả và dễ dàng bảo trì
++ Nếu bạn không muốn tạo fiel 'spec.ts' thì ở mỗi thành phần cần có thêm lệnh
 	--skip-tests
 	<https://angular.io/cli/generate>
 ### 1. Component
