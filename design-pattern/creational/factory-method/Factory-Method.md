@@ -7,14 +7,15 @@
 - khi có một class cha (super-class) với nhiều class con (sub-class),và trả về một class con theo đúng yêu cầu.
 - Chúng ta không biết sau này sẽ cần đến những lớp con nào nữa
 ## Cách cài đặt
-- Super Class: môt supper class trong Factory Pattern có thể là một **interface, abstract hay một class thông thường**.
-- Sub Classes: các sub class sẽ **implement** các phương thức của supper class theo nghiệp vụ riêng của nó.
+- Super Class: môt supper class trong Factory Pattern có thể là một **interface, abstract class** hay một **class** thông thường.
+- Sub Classes: các sub class sẽ **implement** các phương thức của **supper class** theo nghiệp vụ riêng của nó.
 - Factory Class
 	+ Chịu tránh nhiệm khởi tạo các đối tượng sub class dựa theo tham số đầu vào
 	+ Lưu ý:\
-		Lớp này là **Singleton** hoặc cung cấp một public static method cho việc truy xuất và khởi tạo đối tượng\
-		Factory class sử dụng **if-else hoặc switch-case** để xác định class con đầu ra.
+		Lớp này là **Singleton** hoặc cung cấp một **public static method** cho việc truy xuất và khởi tạo đối tượng\
+		Factory class sử dụng **if-else** hoặc **switch-case** để xác định class con đầu ra.
+- Client: chỉ cần đưa tham số đầu vào cho Factory Class
 ## Các cách tạo Factory Method trong code
-- [tai liệu tham khảo](https://gpcoder.com/4352-huong-dan-java-design-pattern-factory-method/)
-- Có một cách tạo duy nhất bạn cần xem soure để biết chi tiết cách thiết kế và đọc folde doc để biết yêu cầu bài toán
-![Factory Method](\image\design-patterns-factory-method-diagram.png)
+- [Tai liệu tham khảo](https://gpcoder.com/4352-huong-dan-java-design-pattern-factory-method/)
+- Có một cách tạo duy nhất bạn cần xem source để biết chi tiết cách thiết kế và đọc thêm folde docs để biết yêu cầu bài toán.
+<img src ="\image\design-patterns-factory-method-diagram.png">
