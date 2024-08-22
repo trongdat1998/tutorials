@@ -1,0 +1,9 @@
+- Cty đang chuyển sản xuất ghế (Chair) thì có 2 loại:
+ + Ghế nhựa (Plastic Chair)
+ + Ghế gỗ (Wood Chair)
+- Cty muốn mở rộng sản phẩm là bàn (Table) cũng có 2 loại:
+ + Bàn nhựa (Plastic Table)
+ + Bàn gỗ (Wood Table)
+Yếu cầu cty cần phải tách ra thàn các nhà máy sản xuất cho từng vật liệu
+ + Nhà máy 1 cho sản xuất vật liệu bằng nhựa (ghế và bàn)
+ + Nhà máy 2 cho sản xuất việt liệu bằng gỗ (ghế và bàn)
