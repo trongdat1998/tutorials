@@ -1,13 +1,11 @@
 public class BillPugh {
-    private BillPugh() {
+    private BillPugh() {}
+    private static class SingletonHelper {
+        private static final BillPugh INSTANCE = new BillPugh();
     }
 
     public static BillPugh getInstance() {
         return SingletonHelper.INSTANCE;
     }
 
-    private static class SingletonHelper {
-        private static final BillPugh INSTANCE = new BillPugh();
-    }
-    // TODO - Khai báo các thuộc tính cho lớp
 }
