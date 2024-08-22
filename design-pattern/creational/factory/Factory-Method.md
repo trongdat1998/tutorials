@@ -1,0 +1,18 @@
+# Factory Method
+
+## Khái niện
+- Giúp bạn quản lý quản và trả về đúng đối tượng mà bạn đã yêu câu
+- Giúp bạn che giấu đi logic cách mà đối tượng ấy được tạo như thế nào
+## Được sử dụng trong những trường hợp nào?
+- khi có một class cha (super-class) với nhiều class con (sub-class),và trả về một class con theo đúng yêu cầu.
+- Chúng ta không biết sau này sẽ cần đến những lớp con nào nữa
+## Nguyên tắc để tạo lên một Factory Method
+- Super Class: môt supper class trong Factory Pattern có thể là một **interface, abstract hay một class thông thường**.
+- Sub Classes: các sub class sẽ **implement** các phương thức của supper class theo nghiệp vụ riêng của nó.
+- Factory Class
++ Chịu tránh nhiệm khởi tạo các đối tượng sub class dựa theo tham số đầu vào
++ Lưu ý:\
+Lớp này là **Singleton** hoặc cung cấp một public static method cho việc truy xuất và khởi tạo đối tượng\
+Factory class sử dụng **if-else hoặc switch-case** để xác định class con đầu ra.
+## Các cách tạo Factory Method trong code
+- Có một cách tạo duy nhất bạn cần xem soure để biết chi tiết cách thiết kế

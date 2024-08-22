@@ -1,0 +1,2 @@
+Team của bạn có nhiệm vụ call API của 2 ngân hàng là TPBank và VietcomBank, về sau có thể thêm các ngân hàng khác.
+Mong muốn là không cần phải thay đổi code của họ khi cần sử dụng thêm dịch vụ của ngân hàng khác
