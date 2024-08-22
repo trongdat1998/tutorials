@@ -18,4 +18,4 @@
 ## Các cách tạo Factory Method trong code
 - [Tai liệu tham khảo](https://gpcoder.com/4352-huong-dan-java-design-pattern-factory-method/)
 - Có một cách tạo duy nhất bạn cần xem source để biết chi tiết cách thiết kế và đọc thêm folde docs để biết yêu cầu bài toán.
-<img src ="\image\design-patterns-factory-method-diagram.png">
+<img src ="https://github.com/trongdat1998/course-DatDT/blob/main/image/design-patterns-factory-method-diagram.png">
