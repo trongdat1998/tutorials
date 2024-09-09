@@ -1,7 +1,7 @@
 public class EagerInitialization {
 //    Start
-    private static final EagerInitialization INSTANCE = new EagerInitialization();
     private EagerInitialization(){}
+    private static final EagerInitialization INSTANCE = new EagerInitialization();
     public static EagerInitialization getInstance(){
         return INSTANCE;
     }

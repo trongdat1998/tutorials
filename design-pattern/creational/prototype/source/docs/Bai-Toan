@@ -1,0 +1,5 @@
+- Bộ phận IT cần setup máy tính (compuer cho các nhân viện mới)
+- Nhận thấy tất cả nhân viên đề phải có:
+    + Hệ điều hành (os), Phần mềm văn phòng (office), Phần mềm diệt virus (antivirus), Trình duyệt (Browser)
+    + Một số phần mềm khác (others) tùy theo nhu cầu của mỗi nhân viên
+- Như vậy IT cần tạo ra bản chuẩn cho một máy tính và có thể clone() cho các máy tính khác mà không cần cài đặt lại từ đầu

@@ -1,7 +1,6 @@
 public class DoubleCheckLocking {
-    private static volatile  DoubleCheckLocking instance;
-
     private DoubleCheckLocking(){}
+    private static volatile  DoubleCheckLocking instance;
 
     public static DoubleCheckLocking getInstance(){
         if (instance == null){

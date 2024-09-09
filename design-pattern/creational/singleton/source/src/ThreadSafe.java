@@ -1,7 +1,6 @@
 public class ThreadSafe {
-    private static volatile ThreadSafe instance;
-
     private ThreadSafe(){}
+    private static ThreadSafe instance;
 
     public static synchronized ThreadSafe getInstance(){
         if (instance == null){

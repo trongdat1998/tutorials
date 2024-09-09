@@ -1,8 +1,8 @@
 public class StaticBlockSingleton {
     //Start
-    private static final StaticBlockSingleton INSTANCE;
     private StaticBlockSingleton() {}
-    // Static block initialization for exception handling
+    private static final StaticBlockSingleton INSTANCE;
+
     static {
         try {
             INSTANCE = new StaticBlockSingleton();

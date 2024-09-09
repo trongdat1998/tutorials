@@ -2,16 +2,18 @@
 
 ## Khái niệm
 - Chỉ tạo ra một đối tượng duy nhất trong suốt quá trình thực  thi trương chình.
-## Được sử dụng trong những trường hợp nào?
+## Trường hợp nào nên dùng?
 - Đảm bảo chỉ có một thể hiện(instance) duy nhất của một class
 - Việc quản lý việc truy cập tốt hơn vì chỉ có một thể hiện duy nhất.
-## Nguyên tắc để tạo lên một Singleton
+## Cách cài đặt
 - **private constructor** giúp để hạn chế truy cập từ class bên ngoài.
 - Thể hiện của đối tượng được đặt **private static final** đảm bảo biến chỉ được khởi tạo trong class.
 - Có một method **public static** để return instance được khởi tạo ở trên.
-## Các cách tạo Singleton trong code
+## Cách cài đặt trong code
+- [Tai liệu tham khảo](https://gpcoder.com/4190-huong-dan-java-design-pattern-singleton/)
 - Trên thực tế chúng ta có rất nhiều cách để tạo ra một **Singleton** tuy nhiên mình sẽ chỉ giới thiệu những mẫu chính và thường gặp.
-- Nên sử dụng **BillPughSingleton** vì có hiệu quả cao, sử dụng **Lazy Initialization** khi làm việc với ứng dụng đơn luồng, và **Double Check Locking** khi làm việc với ứng dụng đa luồng.
+- Nên sử dụng **BillPughSingleton** vì có hiệu quả cao,
+ sử dụng **Lazy Initialization** khi làm việc với ứng dụng đơn luồng, và **Double Check Locking** khi làm việc với ứng dụng đa luồng.
 1. Eager initialization
 + Đối tượng được khởi tạo ngay khi được gọi đến
 + Nó có một nhược điểm là đối tượng được tạo nhưng không dùng tới.
@@ -113,4 +115,7 @@
         }
     }
     ```
-+ Khi Singleton được tải vào bộ nhớ thì SingletonHelper chưa được tải vào. Nó chỉ được tải khi và chỉ khi phương thức getInstance() được gọi. Với cách này tránh được lỗi cơ chế khởi tạo instance của Singleton trong Multi-Thread, performance cao do tách biệt được quá trình xử lý. Do đó, cách làm này được đánh giá là cách triển khai Singleton nhanh và hiệu quả nhất.
++ Khi Singleton được tải vào bộ nhớ thì SingletonHelper chưa được tải vào. 
+Nó chỉ được tải khi và chỉ khi phương thức getInstance() được gọi. 
+Với cách này tránh được lỗi cơ chế khởi tạo instance của Singleton trong Multi-Thread, performance cao do tách biệt được quá trình xử lý. 
+Do đó, cách làm này được đánh giá là cách triển khai Singleton nhanh và hiệu quả nhất.
