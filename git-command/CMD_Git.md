@@ -5,40 +5,43 @@
 	**$ git help --all**
 - Kiểm tra trạng thái của kho lưu trữ\
 	**$ git status**
++ Note: Khi bạn kiểm tra trạng thái kho lưu trữ có 2 mục bạn cần quan tâm\
+"git restore <file>..." là các file bạn đã chỉnh sửa trên local\
+"git add <file>..." là những file bạn thêm vào vào dự án trên local
 - Lấy đường link của Git trong folder dự án\
 	**$ git remote -v**
 - Để loại bỏ tất cả các thay đổi chưa được commit trong Git\
 	**$ git reset --hard hoặc git stash**
-# User Git
+# Git user
 - Cấu hình kiểm tra liên quan tới tài khoản Git
-## Check user đang được login trong Git
+## Check git user
 - Kiểm tra tên người dùng đã được cấu hình trong Git\
 	**$ git config user.name**
 - Kiểm tra email đã được cấu hình trong Git\
 	**$ git config user.email**
 - Kiểm tra thông tin cấu hình toàn cục\
 	**$ git config --list**
-## Login tài khoản vào Git
+## Login Git
 - Thiết lập tên người dùng\
 	**$ git config --global user.name "<dev_name>"**
 - Thiết lập địa chỉ email\
 	**$ git config --global user.email "<dev_email>"**
-## Logout tài khoản Git
+## Logout Git
 - Xóa tên người dùng\
 	**$ git config --global --unset user.name**
 - Xóa địa chỉ email\
 	**$ git config --global --unset user.email**
 - Xóa thông tin xác thực toàn bộ\
 	**$ git config --global --unset-all**
-# Làm việc với nhánh (branch)
+# Branch
 - Nhánh sẽ được lưu trên local và trên remote repository
-## Kiểm tra các nhánh hiện có trên git
+## Check list branch
 - Khi clone source code về local chỉ lưu nhánh chính (main), bạn cần checkout sang các nhánh khác để local nhận được các nhánh khác.
 - Kiểm tra các branch hiện có trên remote repository của bạn.\
 	**$ git branch -a**
 - Kiểm tra các nhánh hiện có trên local.\
 	**$ git branch**
-## Tạo nhánh mới
+## Create branch
 - *Khác với tạo nhánh trên các IDE hay trực tiếp trên Git. Khi dùng lệnh nội dung có trong nhánh xẽ không có gì bạn cần làm thêm bước hợp nhất (merge) nhánh.*
 1. Tạo mới nhánh\
 	**$ git branch <tên_nhánh_mới>**
@@ -48,10 +51,10 @@
 	**$ git merge <nhánh_vừa_tạo>**
 4. Đẩy nhánh vừa tạo lên remote repository.\
 	**$ git push -u origin <nhánh_vừa_tạo>**
-## Chuyển đổi sang nhánh mới
-- Chuyển nhánh khi nhánh đấy không có thay đổi gì\
-	**$ git checkout <tên_nhánh_cần_đến>**
-### Chuyển nhanh khi nhánh có sự thay đổi của nhánh hiện tại
+## Checkout branch
+- Chuyển sang nhánh chỉ định\
+	**$ git checkout <tên_nhánh_cần_đến>**\
+- Note: Khi bạn đang ở branch_1 (file_A có chỉnh sửa) sẽ không checkout sang được branch_2 (file-A đang tồn tại) 
 - Lưu lại công việc đang làm ở branch này để chuyển sang branch khác (Khi bạn chưa muốn commit code).\
 	**$ git stash save # Hoặc $ git stash**
 - Xem list các branch ở local với các nội dung bạn chưa muốn commit.\
@@ -64,7 +67,7 @@
 		*# number là ứng với số lấy ở $ git stash list*
 - Xoá toàn bộ các nội dung ở các nhánh chưa commnit lên remote repository.\
 	**$ git stash clear**
-## Xóa nhánh
+## Remote branch
 1. Xóa nhánh trên local, sau đó thực hiện xóa nhánh trên remote repository. Bạn cần đảm bảo bạn đang đứng khác nhánh cần xóa.\
 	**$ git branch -d <branch_name>**\
 		*# Nhánh này đã được merge*\
@@ -84,8 +87,9 @@
 3. Xóa nhánh cũ đi\
 	**$ git push -d origin <Tên_nhánh_cũ>**
 - Note: Khi xóa nhánh và đổi tên nhánh những người khác không thực hiện được gì với nhánh cũ, nên cần checkout sang nhánh vừa đổi
-# Làm việc với commmit
-## Tạo một commit mới
+# Commmit
+
+## Tạo commit mới
 - Tức bạn thực hiện việc thay đổi code và lưu thay đổi đấy trên remote repository
 1. Khởi tạo repository (nếu chưa có)\
 	**$ git init**
@@ -180,4 +184,10 @@
 - Note: Bạn muốn thay đổi cá project con thì bạn vào chính project, chứ không được vào project all update code nó sẽ gây lỗi
 - Để cập nhật các submodule khi có sự update\
 	**$ git submodule update --recursive --remote --merge**
-**
+# Sử lý code khi bị sung đột (conflict)
+- Nguyên nhân: khi bạn cùng chỉnh sửa ở cùng một dùng code thì khả năng bị conflict khi merge là vô cùng cao
+- Bạn cần biết code nào đang là đoạn code chung và khác biệt giữa 2 file
+- VD: Tôi có file_A đang bị xung đột giữa 2 nhánh branch_1 (nhánh đang đúng) và branch_2
++ Code branch_1 :"<<<<<<< Updated upstream" ~ "======="
++ Code branch_2: "=======" ~  ">>>>>>> Stashed changes"
++ Những đoạn code không nằm trong những khoảng trên là code cả 2 nhánh đều có

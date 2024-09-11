@@ -26,6 +26,8 @@
 - Nó tự động cấu hình các file và package của dự án angular cho chúng ta một cách tự động
 - Angular Cli để tạo các components, directive hay service vào trong dự án có sẵn chỉ bằng 1 dòng lệnh
 # Cài đặt Angular Cli và tạo một dự án Angular
+- Kiểm tra tương thích giữa angular và nodejs
+ <https://angular.dev/reference/versions>
 - Cài đặt Angular Cli\
     **$ npm install -g @angular/cli@latest**
 - Kiểm tra phiên bản Angular Cli\
@@ -95,9 +97,11 @@
     + *package.json* : file này chứa các thư viện cần thiết cho dự án angular, ngoài ra nếu ta thêm một thư viện bên thứ 3 vào thì khai báo trong này.
     + *tslint.js* : dùng để kiểm tra code có chất lượng hay không, có dễ đọc hay dễ bảo trì không, có theo chuẩn không.
     + thư mục *e2e* : chức các file liên quan đến việc testing. Angular sử dụng thư viện protractor để thực hiện automation test trên các trình duyệt
-    + Thư mục *node_modules* : nơi chứa các thư viện và được download về cho dự án angular. Nó được quản lý bằng NPM có nghĩa là ta dùng NPM để xoá , thêm các thư viện.
+    + Thư mục *node_modules* : nơi chứa các thư viện và được download về cho dự án angular.
+		Nó được quản lý bằng NPM có nghĩa là ta dùng NPM để xoá , thêm các thư viện.
     + Thư mục *src* : nơi chứa các source khi chương trình chạy. Đây là nơi tập trung các dòng code của ứng dụng angular.
-    + Thư mục *app* : angular cli tạo ra folder này giống như folder cha của ứng dụng. Angular cli tạo ra như một ví dụ mẫu để sau này ta tạo các component khác. Trong thư mục app thường có
+    + Thư mục *app* : angular cli tạo ra folder này giống như folder cha của ứng dụng. 
+		Angular cli tạo ra như một ví dụ mẫu để sau này ta tạo các component khác. Trong thư mục app thường có
     + *app.component.html* : nơi chúng ta viết các files html. Là tầng view mà người dùng có thể thấy được
     + *app.component.ts* (component class) : là file xử lý các nghiệp vụ nó giống như Controller bên Spring Web.
     + app.component.css : chúng ta định nghĩa các css mà component sẽ dùng.
@@ -107,31 +111,32 @@
 	
 ## Các lệnh CLI Command dùng để tạo dự án bằng dòng lệnh
 - ng generate
-+  Mỗi loại thành phần trong "ng generate" có tác dụng và mục đích riêng, giúp bạn xây dựng và tổ chức ứng dụng của mình một cách hiệu quả và dễ dàng bảo trì
-+ Nếu bạn không muốn tạo fiel 'spec.ts' thì ở mỗi thành phần cần có thêm lệnh
-	--skip-tests
++ Mỗi loại thành phần trong "ng generate" có tác dụng và mục đích riêng,
+ giúp bạn xây dựng và tổ chức ứng dụng của mình một cách hiệu quả và dễ dàng bảo trì
++ Nếu bạn không muốn tạo fiel 'spec.ts' thì ở mỗi thành phần cần có thêm lệnh\
+	--skip-tests\
 	<https://angular.io/cli/generate>
 ### 1. Component
 - Component là một lớp nó thường hiểu như là controller tương tác giao diện người dùng.
 - Một component thường có 3 thành phần chính là code TypeScript, template HTML và CSS
-- Lệnh dùng để tạo component
-	ng generate component [name]
+- Lệnh dùng để tạo component\
+	ng generate component [name]\
 	ng g c [name]
 ### 2. Module
 - Module là cách chia nhỏ các thành phần ứng dụng (giống package trong Java)
-- Lệnh dùng đẻ tạo module
-	ng generate module [name]
+- Lệnh dùng đẻ tạo module\
+	ng generate module [name]\
 	ng g m [name]
 ### 3. Service
 -  Service là các class độc lập được sử dụng để chia sẻ logic và dữ liệu giữa các components trong ứng dụng.
  Service thường được sử dụng để tương tác với dữ liệu từ các nguồn bên ngoài như APIs hoặc lưu trữ dữ liệu địa phương.
-- Lệnh tạo service
-	ng generate service [name]
+- Lệnh tạo service\
+	ng generate service [name]\
 	ng g s [name]
 ### 4. Guard 
 - Guards là các trình giám sát (interceptor) được sử dụng để kiểm soát việc điều hướng trong ứng dụng.
-- Lệnh tạo guard
-	ng generate guard [name] 
+- Lệnh tạo guard\
+	ng generate guard [name] \
 	ng generate g [name]
 ### 5. Interceptor
 - TODO

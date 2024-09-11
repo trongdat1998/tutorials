@@ -1,18 +1,35 @@
-# Biến và khai báo biến
-- Biến dùng để lưu trữ dữ liệu
-- Cú pháp: *var tenbien;*
-- Cách đặt tên biến
-	+ Tên biến bao gồm chữ cái và số, nhưng không được bắt  đầu bằng số
-	+ Tên biến không bao gồm dấu cách và dấu câu, ngoại trừ dấu gạch dưới (_).
-- Có thể khai báo nhiều biến trên một dòng
+# 1. Các cách khai báo biến trong Javascript
+## 1.1. Các cách khai báo biến trong javascript
+- Khai báo biến trong JS bằng từ khóa **var**
 	```js
-	var x, y, zeta;
+		var tenbien;
 	```
-- Có thể vừa khai báo vừa khởi tạo giá trị cho biến
+- Khai báo biến trong JS bằng từ khóa **let**
 	```js
-	var x =1;
-	var x =1, y ="hello";
+		let tenbien;
 	```
+- Khai báo biến trong JS bằng từ khóa const
+	```js
+		const tenbien = 'giá trị';
+	```
+- Sự khác biệt giữa var, let và const trong JavaScript
+| 		  var     | 	let    |       const  	|
+|:----------------|:-----------|:---------------|
+|Phạm vi của một biến var là phạm vi chức năng.|Phạm vi của biến let là phạm vi khối.|Phạm vi của một biến const là phạm vi khối.|
+|
+##1.2. Cách đặt tên cho biến trong Javascript
+- Tên biến phải là các chữ không dấu viết hoa hoặc viết thường, các chữ số từ 0-9 và dấu gạch dưới (_)
+- Tên biến bắt đầu phải là chữ hoặc dấu gạch dưới (_), nếu bắt đầu bằng số là sai
+- Tên biến có thể đặt dài hay ngắn tùy vào lập trình viên.
+	```js
+	
+	```
+##1.3. Cách gán giá trị cho biến trong javascript
+
+##1.4. Kiểu giá trị của biến trong Javascript
+
+##1.5. In giá trị của biến JS ra trình duyệt
+
 # Kiểu dữ liệu
 - JavaScript hỗ trợ những kiểu dữ liệu sau
  + Kiểu số
