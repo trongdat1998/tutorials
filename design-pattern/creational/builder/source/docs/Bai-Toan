@@ -1,0 +1,5 @@
+- Một của hàng bán bánh mỳ nhưng lại có nhiều lựa chọn để tạo ra các hương vị khác nhau
+ + Các loại bánh mỳ (bread): SIMPLE, OMELETTE, FRIED_EGG, GRILLED_FISH, PORK, BEEF;
+ + Order: tại chỗ và mang về
+ + Nước sốt (sauce): SOY_SAUCE, FISH_SAUCE, OLIVE_OIL, KETCHUP, MUSTARD;
+ + Rau quả (vegetable): SALAD, CUCUMBER, TOMATO;
