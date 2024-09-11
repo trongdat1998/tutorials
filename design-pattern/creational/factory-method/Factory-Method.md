@@ -1,8 +1,7 @@
 # Factory Method
 
 ## Khái niện
-- Giúp bạn quản lý quản và trả về đúng đối tượng mà bạn đã yêu câu
-- Giúp bạn che giấu đi logic cách mà đối tượng ấy được tạo như thế nào
+- Được sử dụng để tạo đối tượng mà không cần chỉ định lớp cụ thể của đối tượng đó
 ## Trường hợp nào nên dùng?
 - Khi có một class cha (super-class) với nhiều class con (sub-class),và trả về một class con theo đúng yêu cầu.
 - Chúng ta không biết sau này sẽ cần đến những lớp con nào nữa
@@ -15,7 +14,7 @@
 		Lớp này là **Singleton** hoặc cung cấp một **public static method** cho việc truy xuất và khởi tạo đối tượng\
 		Factory class sử dụng **if-else** hoặc **switch-case** để xác định class con đầu ra.
 - Client: chỉ cần đưa tham số đầu vào cho Factory Class
-## Cách cài đặt trong code
+### Cách cài đặt trong code
 - [Tai liệu tham khảo](https://gpcoder.com/4352-huong-dan-java-design-pattern-factory-method/)
 - Có một cách tạo duy nhất bạn cần xem source để biết chi tiết cách thiết kế và đọc thêm folde docs để biết yêu cầu bài toán.
 <img src ="https://github.com/trongdat1998/course-DatDT/blob/main/image/design-patterns-factory-method-diagram.png">
