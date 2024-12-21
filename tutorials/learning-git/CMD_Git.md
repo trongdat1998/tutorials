@@ -1,23 +1,23 @@
 # Hệ thống quản lý phiên bản - Version Control System (VSC)
 - Là một hệ thống ghi nhận và lưu lại sự thay đổi của các file theo thời gian. Cũng giúp bạn phục hồi quay về trạng thái ở một thời điểm trước đó
 - Phân loại VCS:
-1. Hệ thống quản lý phiên bản cục bộ (Local Version Control Systems)
-- Là dạng quản lý phiên bản ngay trên máy tính cá nhân của người dùng
-- Nhược điểm: Không phù hợp cho làm việc nhóm; dễ bị mất dữ liệu nếu ổ cứng bị hỏng.
-- Ví dụ: RCS (Revision Control System)
-2. Hệ thống quản lý phiên bản tập trung (Centralized Version Control Systems - CVCS)
-- Là hệ thống gồm **một máy chủ** chứa toàn bộ dữ liệu phiên bản khác nhau của dự án
-- Nhược điểm: Phải phụ thuộc vào máy chủ trung tâm
-- Ví dụ: SVN (Apache Subversion)
-3. Hệ thống quản lý phiên bản phân tán (Distributed Version Control Systems - DVCS)
-- Khi một client truy xuất dữ liệu từ máy chủ, nó không chỉ lấy về dữ liệu ở phiên bản mới nhất, mà nó còn tải về cả kho chứa của hệ thống.
-- Nhược điểm: Khó học
-- Ví dụ: Git
+	1. Hệ thống quản lý phiên bản cục bộ (Local Version Control Systems)
+		+ Là dạng quản lý phiên bản ngay trên máy tính cá nhân của người dùng
+		+ Nhược điểm: Không phù hợp cho làm việc nhóm; dễ bị mất dữ liệu nếu ổ cứng bị hỏng.
+		+ Ví dụ: RCS (Revision Control System)
+	2. Hệ thống quản lý phiên bản tập trung (Centralized Version Control Systems - CVCS)
+		+ Là hệ thống gồm **một máy chủ** chứa toàn bộ dữ liệu phiên bản khác nhau của dự án
+		+ Nhược điểm: Phải phụ thuộc vào máy chủ trung tâm
+		+ Ví dụ: SVN (Apache Subversion)
+	3. Hệ thống quản lý phiên bản phân tán (Distributed Version Control Systems - DVCS)
+		+ Khi một client truy xuất dữ liệu từ máy chủ, nó không chỉ lấy về dữ liệu ở phiên bản mới nhất, mà nó còn tải về cả kho chứa của hệ thống.
+		+ Nhược điểm: Khó học
+		+ Ví dụ: Git
 # Tìm hiểu về Git
 - Git là 1 hệ thống quản lý phiên bản phân tán (DVCS)
 - Hầu hết mọi thao tác với Git diễn ra ở Local
 - GitHub, GitLab là những trang web phát triển dự trên công cụ Git
-![alt](https://github.com/trongdat1998/personal-blog/tree/main/image/git/git.jpg)
+![công cụ git](https://github.com/trongdat1998/personal-blog/tree/main/image/git/git.jpg)
 ## Các khu vực làm việc và Repository
 ![alt](https://github.com/trongdat1998/personal-blog/tree/main/image/git/working.png)
 1. Working Directory (project)
