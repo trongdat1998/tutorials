@@ -1,90 +1,199 @@
-# Các lệnh cơ bản trong Git
+# Hệ thống quản lý phiên bản - Version Control System (VSC)
+- Là một hệ thống ghi nhận và lưu lại sự thay đổi của các file theo thời gian. Cũng giúp bạn phục hồi quay về trạng thái ở một thời điểm trước đó
+- Phân loại VCS:
+1. Hệ thống quản lý phiên bản cục bộ (Local Version Control Systems)
+- Là dạng quản lý phiên bản ngay trên máy tính cá nhân của người dùng
+- Nhược điểm: Không phù hợp cho làm việc nhóm; dễ bị mất dữ liệu nếu ổ cứng bị hỏng.
+- Ví dụ: RCS (Revision Control System)
+2. Hệ thống quản lý phiên bản tập trung (Centralized Version Control Systems - CVCS)
+- Là hệ thống gồm **một máy chủ** chứa toàn bộ dữ liệu phiên bản khác nhau của dự án
+- Nhược điểm: Phải phụ thuộc vào máy chủ trung tâm
+- Ví dụ: SVN (Apache Subversion)
+3. Hệ thống quản lý phiên bản phân tán (Distributed Version Control Systems - DVCS)
+- Khi một client truy xuất dữ liệu từ máy chủ, nó không chỉ lấy về dữ liệu ở phiên bản mới nhất, mà nó còn tải về cả kho chứa của hệ thống.
+- Nhược điểm: Khó học
+- Ví dụ: Git
+# Tìm hiểu về Git
+- Git là 1 hệ thống quản lý phiên bản phân tán (DVCS)
+- Hầu hết mọi thao tác với Git diễn ra ở Local
+- GitHub, GitLab là những trang web phát triển dự trên công cụ Git
+![alt](https://github.com/trongdat1998/personal-blog/tree/main/image/git/git.jpg)
+## Các khu vực làm việc và Repository
+![alt](https://github.com/trongdat1998/personal-blog/tree/main/image/git/working.png)
+1. Working Directory (project)
+- Là khu vực mà bạn thực hiện các thay đổi trực tiếp trên các tệp của dự án.
+2. Staging Area (project/.git/index)
+- Là khu vực lưu tạm các file thay đổi chuẩn bị commit
+3. Local Repository 
+- Là repository bố trí trên máy của bản thân mình
+4. Remote repository
+- Là repository để chia sẻ giữa nhiều người và bố trí trên server chuyên dụng
+## Trạng thái của file trong Git
+![alt](https://github.com/trongdat1998/personal-blog/tree/main/image/git/status_file.jpg)
+- Ở trên local repository file có 2 trạng thái là: Được Git theo dõi và không được Git theo dõi
+1. Untracked (Chưa được Git theo dõi)
+- Tệp mới được tạo hoặc thêm vào thư mục làm việc nhưng chưa được Git theo dõi.
+- Hiển thị trong *git status* dưới danh mục **Untracked files:**
+- Để chuyển trạng thái Untracked ⇒ Staged\
+	**git add**
+2. Modified
+- Là những file có sự thay đổi và được Git theo dõi
+- Hiển thị trong *git status* dưới danh mục **Changes not staged for commit:**
+- Để chuyển trạng thái Modified ⇒ Staged\
+	**git add**
+3. Staged
+- Đánh dấu các sự thay đổi để chuẩn bị cho bước commit
+- Hiển thị trong *git status* dưới danh mục **Changes to be committed:**
+- Để chuyển trạng thái *Staged ⇒ Unmodified*\
+	**git commit**
+- - Để chuyển trạng thái Staged về trạng thái trước đấy (Untracked và Staged)\
+	**git reset**
+4. Unmodified
+- Khi các file đã được đánh dấu sau khi được commit sẽ lại trở về trạng thái ko thay đổi
+- Lúc này khi chúng ta *git status* sẽ không còn thấy các file có thay đỗi nữa.
+- Để chuyển trạng thái *Unmodified ⇒ Remote Repo*\
+	**git push**
+## Thao tác cơ bản trên Git
+- Tìm hiểu về các command thông dụng trong Git
+### Các lệnh cơ bản trong Git
 - Check version\
 	**$ git --v**
 - Hướng dẫn bạn có thể làm được những gì, tất cả các lệnh có thể\
 	**$ git help --all**
-- Kiểm tra trạng thái của kho lưu trữ\
-	**$ git status**
-+ Note: Khi bạn kiểm tra trạng thái kho lưu trữ có 2 mục bạn cần quan tâm\
-"git restore <file>..." là các file bạn đã chỉnh sửa trên local\
-"git add <file>..." là những file bạn thêm vào vào dự án trên local
 - Lấy đường link của Git trong folder dự án\
 	**$ git remote -v**
-- Để loại bỏ tất cả các thay đổi chưa được commit trong Git\
-	**$ git reset --hard hoặc git stash**
-# Git user
-- Cấu hình kiểm tra liên quan tới tài khoản Git
-## Check git user
+- Bấn *q* để thoát khi dùng lệnh *git log*
+### Git user
+
+1. Check git
 - Kiểm tra tên người dùng đã được cấu hình trong Git\
 	**$ git config user.name**
 - Kiểm tra email đã được cấu hình trong Git\
 	**$ git config user.email**
-- Kiểm tra thông tin cấu hình toàn cục\
+- Kiểm tra toàn bộ thông tin cấu hình git\
 	**$ git config --list**
-## Login Git
+2. Login Git
 - Thiết lập tên người dùng\
 	**$ git config --global user.name "<dev_name>"**
 - Thiết lập địa chỉ email\
 	**$ git config --global user.email "<dev_email>"**
-## Logout Git
+3. Logout Git
 - Xóa tên người dùng\
 	**$ git config --global --unset user.name**
 - Xóa địa chỉ email\
 	**$ git config --global --unset user.email**
 - Xóa thông tin xác thực toàn bộ\
 	**$ git config --global --unset-all**
-# Branch
-- Nhánh sẽ được lưu trên local và trên remote repository
-## Check list branch
-- Khi clone source code về local chỉ lưu nhánh chính (main), bạn cần checkout sang các nhánh khác để local nhận được các nhánh khác.
+### Branch
+- Là phân nhánh của repository và ghi lại luồng của history, mỗi branch độc lập thì có history riêng, không ảnh hưởng đến branch khác
+- Vai trò: phân chia các task công việc thành các branch từ đó tránh được việc xung đột
+- Khi cần gộp lại các tính năng đã phát triển trên các branch khác nhau thì sẽ sử dụng tính năng *git merge*
+1. Check list branch
 - Kiểm tra các branch hiện có trên remote repository của bạn.\
 	**$ git branch -a**
 - Kiểm tra các nhánh hiện có trên local.\
 	**$ git branch**
-## Create branch
+2. Create branch
 - *Khác với tạo nhánh trên các IDE hay trực tiếp trên Git. Khi dùng lệnh nội dung có trong nhánh xẽ không có gì bạn cần làm thêm bước hợp nhất (merge) nhánh.*
-1. Tạo mới nhánh\
-	**$ git branch <tên_nhánh_mới>**
-2. chuyển đến nhánh cần lấy nội dung (thường là *main* hoặc *master*).\
+◇ Tạo mới nhánh\
+	**$ git branch <tên_nhánh_mới>**\
+◇ Chuyển đến nhánh cần lấy nội dung (thường là *main* hoặc *master*).\
 	**$ git checkout <main>**
-3. Hợp nhất 2 nhánh.\
-	**$ git merge <nhánh_vừa_tạo>**
-4. Đẩy nhánh vừa tạo lên remote repository.\
-	**$ git push -u origin <nhánh_vừa_tạo>**
-## Checkout branch
+◇ Hợp nhất 2 nhánh.\
+	**$ git merge <tên_nhánh_vừa_tạo>**
+◇ Đẩy nhánh vừa tạo lên remote repository.\
+	**$ git push -u origin <tên_nhánh_vừa_tạo>**
+3. Checkout branch
 - Chuyển sang nhánh chỉ định\
 	**$ git checkout <tên_nhánh_cần_đến>**\
-- Note: Khi bạn đang ở branch_1 (file_A có chỉnh sửa) sẽ không checkout sang được branch_2 (file-A đang tồn tại) 
+※ : Khi bạn đang ở branch_1 (file_A có chỉnh sửa) sẽ không checkout sang được branch_2
+### Git init
+- Tạo ra file ẩn (.git), bạn có thể thao tác các lệnh của git trên local repository
+※ Bạn có thể dùng các lệnh để lưu lịch sử chỉnh sửa như bình thường, nhưng không thể dùng *git push* vì bạn chỉ có thể làm việc trên local
+### Git add
+- Lưu thông tin thay đổi vào vùng *staging* để chuẩn bị cho lệnh commit tiếp theo
+◇ Đưa vào vùng staging file, thư mục cụ thể\
+	**$ git add <file1 file2 dir1 dir2 ...>**
+◇ Đưa vào vùng staging toàn bộ thư mục làm việc\
+	**$ git add .       # thêm tất cả thay đổi**\
+	**$ git add *.java  # thêm tất cả file có phần mở rộng .java**
+	
+### Git commit
+◇ Lệnh commit cơ bản, thực hiện với tham số *-m* để kèm dòng thông tin về commit\
+	**$ git commit -m "Ghi chú về commit"**
+◇ Khi cho tham số -a nó tương đương *git add* (chỉ add những file được git theo dõi) sau đó tự động chạy git commit
+	**$ git commit -a -m "Ghi chú về commit"**
+◇ Nếu commit đã được tạo ra nhưng chưa thực hiện push lên remote. Thì bạn có thể tạo ra commit mới thay thế cho commit cuối cùng đó
+	**$ git commit --amend -m "Thông tin về commit"**
+※ Dùng trong trường hợp không muốn tạo ra nhiều commit trong lịch sử commit. Ví dụ:
+	```git
+		git add
+		git commit -m "cm1'
+		# bạn tiếp tục chỉnh sửa
+		git add
+		git commit -m "cm2'
+		git push
+		# Lúc này trên server lưu thay đổi ở cm2
+	```
+### Git status
+- Sử dụng lệnh *git status* để biết thông tin trạng thái sửa đổi, thêm mới, xóa các file trước khi thực hiện commit
+◇ Nếu muốn hiện thị thông tin ngắn gọn hơn thì cho thêm tham số *-s*
+	**$ git status -s**
+→ ?? = untracked (file lạ)
+→ M = modified (có sửa đổi)
+→ M = staged (có sửa đổi, chưa commit)
+→ A = added (file mới thêm, chưa commit)
+→ D = deleted (file bị xóa)
+### Git log
+- Tìm kiếm, xem lại, lọc các thông tin log lịch sử commit. 
+◇ Mỗi commit có các thông tin gồm: mã hash của commit, dòng thông báo, người tạo commit và ngày tạo commit
+	**$ git log**
+◇ Nếu chỉ muốn hiện thị một số commit log, ví dụ hiện thị log của 2 commit cuối thì cho thêm -2 vào lệnh
+	**$ git log -2**
+◇ Nếu muốn hiện thị chi tiết các thay đổi của từng commit thì thêm vào tham số -p
+	**$ git log -p -2**
+◇ Lọc theo ngày bạn có thể dùng tham số --after="year-month-day" hoặc --before="year-month-day"
+	**$ git log --after="2023-11-1" --before="2023-11-21"**
+◇ Chỉ hiển thị mã hash và message
+	**$ git log --oneline**
+◇ Bạn có thể xem lịch sự commit một cách trực quan của một nhánh
+	**$ git log --graph**
+### Git reset
+
+	
+	
+	
+// Todo
 - Lưu lại công việc đang làm ở branch này để chuyển sang branch khác (Khi bạn chưa muốn commit code).\
 	**$ git stash save # Hoặc $ git stash**
 - Xem list các branch ở local với các nội dung bạn chưa muốn commit.\
 	**$ git stash list**
 - Xem lại nội dung thay đổi cụ thể ở branch chỉ định .\
 	**$ git stash show stash@{number}**\
-		*# number là ứng với số lấy ở $ git stash list*
+	*※ number là ứng với số lấy ở $ git stash list*
 - Lấy nội dung ở branch chỉ định vào nhánh vừa checkout đến.\
 	**$ git stash apply stash@{number}**\
 		*# number là ứng với số lấy ở $ git stash list*
 - Xoá toàn bộ các nội dung ở các nhánh chưa commnit lên remote repository.\
 	**$ git stash clear**
-## Remote branch
-1. Xóa nhánh trên local, sau đó thực hiện xóa nhánh trên remote repository. Bạn cần đảm bảo bạn đang đứng khác nhánh cần xóa.\
+4. Remote branch
+◇ Xóa nhánh trên local, sau đó thực hiện xóa nhánh trên remote repository. Bạn cần đảm bảo bạn đang đứng khác nhánh cần xóa.\
 	**$ git branch -d <branch_name>**\
 		*# Nhánh này đã được merge*\
 	**$ git branch -D <branch_name>**
 		*# Nhánh này chưa được merge*
-2. Xóa nhánh trên remote repository.\
+◇ Xóa nhánh trên remote repository.\
 	**$ git push -d origin <nhanh_cần_xóa>**
 		*# Khi bạn bỏ qua 1. thì nhánh này vẫn lưu trên local. Bạn có để push lên remote repository lại, hoặc loại bỏ luôn*
-## Đổi tên nhánh
-1. Đổi tên nhánh\
+5. Đổi tên nhánh
+◇ Đổi tên nhánh\
 	**$ git branch -M <Tên_mới_cho_nhánh>**\
 		*# Đổi tên nhánh tại vị trí nhánh bạn đang đứng*\
 	**$ git branch -M <Tên_nhánh_khác_với vị_trí đứng> <Tên_mới_cho_nhánh>**\
 		*# Đổi tên nhánh khác với vị trí bạn đang đứng*
-2. Đẩy tên mới của nhánh lên remote repository\
+◇ Đẩy tên mới của nhánh lên remote repository\
 	**$ git push -u origin <Tên_mới_của_nhánh>**
-3. Xóa nhánh cũ đi\
+◇ Xóa nhánh cũ đi\
 	**$ git push -d origin <Tên_nhánh_cũ>**
 - Note: Khi xóa nhánh và đổi tên nhánh những người khác không thực hiện được gì với nhánh cũ, nên cần checkout sang nhánh vừa đổi
 # Commmit
@@ -191,3 +300,29 @@
 + Code branch_1 :"<<<<<<< Updated upstream" ~ "======="
 + Code branch_2: "=======" ~  ">>>>>>> Stashed changes"
 + Những đoạn code không nằm trong những khoảng trên là code cả 2 nhánh đều có
+# Cách dùng file Gitignore
+- Liệt kê các file mà bạn không muốm đưa lên Git
+- Các pattern format hay dùng
++ Cấu trúc dự án\
+	```java
+	.
+	├── build/
+	├── src/
+	│   ├── build/
+	│   └── temp/
+	└── .gitignore
+	```
++ Tạo file Gitignore\
+Tải thư viện touch cho win\
+	**npm install touch-cli -g**\
+Tạo file cho thu mục\
+	**$ touch .gitignore**
++ Sử dụng # để comment và có thể để cách dòng cho dễ đọc.
++ Loại bỏ 1 file cụ thể: liệt kê trực tiếp tên tệp
++ Sử dụng `*` tìm các file có định dạng và loại bỏ chúng\
+Vd) *.log -> Tìm tất cả các file có đuôi là .log, sẽ không thực hiện commit các file này lên Git
++ Loại bỏ 1 folder cụ thể\
+	**/build/** -> chỉ loại bỏ được thư mục build ngang hàng với file gitignore\
+	**build/** -> loại bỏ được tất cả các thu mục có tên build
+
+
