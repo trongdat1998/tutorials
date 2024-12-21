@@ -29,7 +29,7 @@
 - Kiểm tra tương thích giữa angular và nodejs
  <https://angular.dev/reference/versions>
 - Cài đặt Angular Cli\
-    **$ npm install -g @angular/cli@latest**
+    **$ npm install -g @angular/cli@<version>**
 - Kiểm tra phiên bản Angular Cli\
     **$ ng --version**
 - Tạo dự án Angular\
