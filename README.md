@@ -19,6 +19,9 @@
 - Library (thư viện): là một tập hợp các hàm, phương thức hoặc đoạn mã được xây dựng sẵn để có thể tái sử dụng.
 - Framework (bộ khung): là một bộ khung cho toàn bộ ứng dụng, nghĩa là bạn cần tuân theo cách tổ chức và kiến trúc mà nó đề ra
 + 
-## 
+## Xóa bỏ các lệnh
+- Xóa nỏ lệnh trên CMD windows\
+	**$ cls**
+
 
 

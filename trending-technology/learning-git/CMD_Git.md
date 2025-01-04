@@ -1,33 +1,34 @@
 # Hệ thống quản lý phiên bản - Version Control System (VSC)
 - Là một hệ thống ghi nhận và lưu lại sự thay đổi của các file theo thời gian. Cũng giúp bạn phục hồi quay về trạng thái ở một thời điểm trước đó
 - Phân loại VCS:
-	1. Hệ thống quản lý phiên bản cục bộ (Local Version Control Systems)
-		+ Là dạng quản lý phiên bản ngay trên máy tính cá nhân của người dùng
-		+ Nhược điểm: Không phù hợp cho làm việc nhóm; dễ bị mất dữ liệu nếu ổ cứng bị hỏng.
-		+ Ví dụ: RCS (Revision Control System)
-	2. Hệ thống quản lý phiên bản tập trung (Centralized Version Control Systems - CVCS)
-		+ Là hệ thống gồm **một máy chủ** chứa toàn bộ dữ liệu phiên bản khác nhau của dự án
-		+ Nhược điểm: Phải phụ thuộc vào máy chủ trung tâm
-		+ Ví dụ: SVN (Apache Subversion)
-	3. Hệ thống quản lý phiên bản phân tán (Distributed Version Control Systems - DVCS)
-		+ Khi một client truy xuất dữ liệu từ máy chủ, nó không chỉ lấy về dữ liệu ở phiên bản mới nhất, mà nó còn tải về cả kho chứa của hệ thống.
-		+ Nhược điểm: Khó học
-		+ Ví dụ: Git
+1. Hệ thống quản lý phiên bản cục bộ (Local Version Control Systems)
+	+ Là dạng quản lý phiên bản ngay trên máy tính cá nhân của người dùng
+	+ Nhược điểm: Không phù hợp cho làm việc nhóm; dễ bị mất dữ liệu nếu ổ cứng bị hỏng.
+	+ Ví dụ: RCS (Revision Control System)
+2. Hệ thống quản lý phiên bản tập trung (Centralized Version Control Systems - CVCS)
+	+ Là hệ thống gồm **một máy chủ** chứa toàn bộ dữ liệu phiên bản khác nhau của dự án
+	+ Nhược điểm: Phải phụ thuộc vào máy chủ trung tâm
+	+ Ví dụ: SVN (Apache Subversion)
+3. Hệ thống quản lý phiên bản phân tán (Distributed Version Control Systems - DVCS)
+	+ Khi một client truy xuất dữ liệu từ máy chủ, nó không chỉ lấy về dữ liệu ở phiên bản mới nhất, mà nó còn tải về cả kho chứa của hệ thống.
+	+ Nhược điểm: Khó học
+	+ Ví dụ: Git
 # Tìm hiểu về Git
 - Git là 1 hệ thống quản lý phiên bản phân tán (DVCS)
 - Hầu hết mọi thao tác với Git diễn ra ở Local
-- GitHub, GitLab là những trang web phát triển dự trên công cụ Git
-![công cụ git](https://github.com/trongdat1998/personal-blog/tree/main/image/git/git.jpg)
+- GitHub, GitLab là những trang web phát triển dự trên công cụ Git\
+![](./image/git/git.jpg)
+
 ## Các khu vực làm việc và Repository
 ![alt](https://github.com/trongdat1998/personal-blog/tree/main/image/git/working.png)
 1. Working Directory (project)
-- Là khu vực mà bạn thực hiện các thay đổi trực tiếp trên các tệp của dự án.
+	+ Là khu vực mà bạn thực hiện các thay đổi trực tiếp trên các tệp của dự án.
 2. Staging Area (project/.git/index)
-- Là khu vực lưu tạm các file thay đổi chuẩn bị commit
+	+ Là khu vực lưu tạm các file thay đổi chuẩn bị commit
 3. Local Repository 
-- Là repository bố trí trên máy của bản thân mình
+	+ Là repository bố trí trên máy của bản thân mình
 4. Remote repository
-- Là repository để chia sẻ giữa nhiều người và bố trí trên server chuyên dụng
+	+ Là repository để chia sẻ giữa nhiều người và bố trí trên server chuyên dụng
 ## Trạng thái của file trong Git
 ![alt](https://github.com/trongdat1998/personal-blog/tree/main/image/git/status_file.jpg)
 - Ở trên local repository file có 2 trạng thái là: Được Git theo dõi và không được Git theo dõi
@@ -85,15 +86,16 @@
 - Xóa thông tin xác thực toàn bộ\
 	**$ git config --global --unset-all**
 ### Branch
+https://xuanthulab.net/lam-viec-voi-nhanh-branch-tao-nhanh-gop-nhanh-trong-git.html
 - Là phân nhánh của repository và ghi lại luồng của history, mỗi branch độc lập thì có history riêng, không ảnh hưởng đến branch khác
 - Vai trò: phân chia các task công việc thành các branch từ đó tránh được việc xung đột
 - Khi cần gộp lại các tính năng đã phát triển trên các branch khác nhau thì sẽ sử dụng tính năng *git merge*
-1. Check list branch
+#### Xem danh sách các nhánh - branch
 - Kiểm tra các branch hiện có trên remote repository của bạn.\
 	**$ git branch -a**
 - Kiểm tra các nhánh hiện có trên local.\
 	**$ git branch**
-2. Create branch
+#### Tạo một nhánh mới
 - *Khác với tạo nhánh trên các IDE hay trực tiếp trên Git. Khi dùng lệnh nội dung có trong nhánh xẽ không có gì bạn cần làm thêm bước hợp nhất (merge) nhánh.*
 ◇ Tạo mới nhánh\
 	**$ git branch <tên_nhánh_mới>**\
@@ -103,17 +105,39 @@
 	**$ git merge <tên_nhánh_vừa_tạo>**
 ◇ Đẩy nhánh vừa tạo lên remote repository.\
 	**$ git push -u origin <tên_nhánh_vừa_tạo>**
-3. Checkout branch
+#### Chuyển nhánh làm việc mới
 - Chuyển sang nhánh chỉ định\
 	**$ git checkout <tên_nhánh_cần_đến>**\
 ※ : Khi bạn đang ở branch_1 (file_A có chỉnh sửa) sẽ không checkout sang được branch_2
+#### Xóa nhánh
+◇ Xóa nhánh trên local, sau đó thực hiện xóa nhánh trên remote repository. Bạn cần đảm bảo bạn đang đứng khác nhánh cần xóa.\
+	**$ git branch -d <branch_name>**\
+		*# Nhánh này đã được merge*\
+	**$ git branch -D <branch_name>**
+		*# Nhánh này chưa được merge*
+◇ Xóa nhánh trên remote repository.\
+	**$ git push -d origin <nhanh_cần_xóa>**
+		*# Khi bạn bỏ qua 1. thì nhánh này vẫn lưu trên local. Bạn có để push lên remote repository lại, hoặc loại bỏ luôn*
+#### Đổi tên nhánh
+◇ Đổi tên nhánh\
+	**$ git branch -M <Tên_mới_cho_nhánh>**\
+		*# Đổi tên nhánh tại vị trí nhánh bạn đang đứng*\
+	**$ git branch -M <Tên_nhánh_khác_với vị_trí đứng> <Tên_mới_cho_nhánh>**\
+		*# Đổi tên nhánh khác với vị trí bạn đang đứng*
+◇ Đẩy tên mới của nhánh lên remote repository\
+	**$ git push -u origin <Tên_mới_của_nhánh>**
+◇ Xóa nhánh cũ đi\
+	**$ git push -d origin <Tên_nhánh_cũ>**
+- Note: Khi xóa nhánh và đổi tên nhánh những người khác không thực hiện được gì với nhánh cũ, nên cần checkout sang nhánh vừa đổi
+
 ### Git init
 - Tạo ra file ẩn (.git), bạn có thể thao tác các lệnh của git trên local repository
 ※ Bạn có thể dùng các lệnh để lưu lịch sử chỉnh sửa như bình thường, nhưng không thể dùng *git push* vì bạn chỉ có thể làm việc trên local
+
 ### Git add
 - Lưu thông tin thay đổi vào vùng *staging* để chuẩn bị cho lệnh commit tiếp theo
 ◇ Đưa vào vùng staging file, thư mục cụ thể\
-	**$ git add <file1 file2 dir1 dir2 ...>**
+	**$ git add <file1> <file2>**
 ◇ Đưa vào vùng staging toàn bộ thư mục làm việc\
 	**$ git add .       # thêm tất cả thay đổi**\
 	**$ git add *.java  # thêm tất cả file có phần mở rộng .java**
@@ -125,9 +149,9 @@
 	**$ git commit -a -m "Ghi chú về commit"**
 ◇ Nếu commit đã được tạo ra nhưng chưa thực hiện push lên remote. Thì bạn có thể tạo ra commit mới thay thế cho commit cuối cùng đó
 	**$ git commit --amend -m "Thông tin về commit"**
-※ Dùng trong trường hợp không muốn tạo ra nhiều commit trong lịch sử commit. Ví dụ:
+※ Dùng trong trường hợp không muốn tạo ra nhiều commit trong lịch sử commit. Ví dụ:\
 	```git
-		git add
+		git add\
 		git commit -m "cm1'
 		# bạn tiếp tục chỉnh sửa
 		git add
@@ -135,15 +159,17 @@
 		git push
 		# Lúc này trên server lưu thay đổi ở cm2
 	```
+
 ### Git status
 - Sử dụng lệnh *git status* để biết thông tin trạng thái sửa đổi, thêm mới, xóa các file trước khi thực hiện commit
 ◇ Nếu muốn hiện thị thông tin ngắn gọn hơn thì cho thêm tham số *-s*
-	**$ git status -s**
-→ ?? = untracked (file lạ)
-→ M = modified (có sửa đổi)
-→ M = staged (có sửa đổi, chưa commit)
-→ A = added (file mới thêm, chưa commit)
-→ D = deleted (file bị xóa)
+	**$ git status -s**\
+→ <span style="color: red;">??</span> = untracked (file lạ)\
+→ <span style="color: red;">M</span> = staged (có sửa đổi, chưa commit)\
+→ <span style="color: green;">M</span> = staged (có sửa đổi, chưa commit)\
+→ <span style="color: green;">A</span> = added (file mới thêm, chưa commit)\
+→ <span style="color: red;">D</span> = deleted (file bị xóa)
+
 ### Git log
 - Tìm kiếm, xem lại, lọc các thông tin log lịch sử commit. 
 ◇ Mỗi commit có các thông tin gồm: mã hash của commit, dòng thông báo, người tạo commit và ngày tạo commit
@@ -158,11 +184,35 @@
 	**$ git log --oneline**
 ◇ Bạn có thể xem lịch sự commit một cách trực quan của một nhánh
 	**$ git log --graph**
-### Git reset
 
-	
-	
-	
+### Git reset
+- Cách sử dụng lệnh git reset để undo, hủy commit cuối hoặc hủy đưa thay đổi vào vùng staging
+#### Hủy commit
+- git reset với tham số --soft
++ Những thay đỗi chuyển về vùng staging (các chỉnh sữa trước đấy vẫn còn lưu)
+	**$ git reset --soft HEAD~1**
+- git reset với tham số --hard
++ Những thay đỗi không chuyển về vùng staging (các chỉnh sữa trước đấy về code được pull trên git)
+	**$ git reset --hard HEAD~1**\
+#### Hủy git add
+- Nếu bạn đã dùng lệnh git add để cập nhật thay đổi vào vùng staging, bạn có thể hủy thao tác này bằng cách thực hiện lệnh
+	**$ git reset**
+####Hủy đưa một file vào staging
+- Nếu muốn hủy một file nào đó trong vùng staging chứ không phải toàn bộ thì dùng lệnh
+	**$ git reset -- <filename>**
+
+### Git diff
+- Dùng để kiểm tra sự khác nhau, thay đổi giữa thư mục làm việc và commit cuối, giữa index và commit cuối, giữa các nhánh
++ Kiểm tra thông tin khác nhau trong vùng staging\
+	** $ git diff**
++ Kiểm tra sự thay đổi của index (staging) với commit cuối\
+	** $git diff --staged**
++ Kiểm tra thay đổi giữa hai commit\
+	**$ git diff <hash-commit1> <hash-commit2>**
++ Kiểm tra sự thay đổi của hai nhánh\
+	**$ git diff <branch1> <branch2>**
+
+
 // Todo
 - Lưu lại công việc đang làm ở branch này để chuyển sang branch khác (Khi bạn chưa muốn commit code).\
 	**$ git stash save # Hoặc $ git stash**
@@ -176,26 +226,7 @@
 		*# number là ứng với số lấy ở $ git stash list*
 - Xoá toàn bộ các nội dung ở các nhánh chưa commnit lên remote repository.\
 	**$ git stash clear**
-4. Remote branch
-◇ Xóa nhánh trên local, sau đó thực hiện xóa nhánh trên remote repository. Bạn cần đảm bảo bạn đang đứng khác nhánh cần xóa.\
-	**$ git branch -d <branch_name>**\
-		*# Nhánh này đã được merge*\
-	**$ git branch -D <branch_name>**
-		*# Nhánh này chưa được merge*
-◇ Xóa nhánh trên remote repository.\
-	**$ git push -d origin <nhanh_cần_xóa>**
-		*# Khi bạn bỏ qua 1. thì nhánh này vẫn lưu trên local. Bạn có để push lên remote repository lại, hoặc loại bỏ luôn*
-5. Đổi tên nhánh
-◇ Đổi tên nhánh\
-	**$ git branch -M <Tên_mới_cho_nhánh>**\
-		*# Đổi tên nhánh tại vị trí nhánh bạn đang đứng*\
-	**$ git branch -M <Tên_nhánh_khác_với vị_trí đứng> <Tên_mới_cho_nhánh>**\
-		*# Đổi tên nhánh khác với vị trí bạn đang đứng*
-◇ Đẩy tên mới của nhánh lên remote repository\
-	**$ git push -u origin <Tên_mới_của_nhánh>**
-◇ Xóa nhánh cũ đi\
-	**$ git push -d origin <Tên_nhánh_cũ>**
-- Note: Khi xóa nhánh và đổi tên nhánh những người khác không thực hiện được gì với nhánh cũ, nên cần checkout sang nhánh vừa đổi
+
 # Commmit
 
 ## Tạo commit mới
