@@ -1,4 +1,4 @@
-# Chương 1: Những kiến thức cơ bản về Java
-- Giúp bạn hiểu được khái niệm lập trình hướng đối tượng, các đặc trưng chính (đóng gói, kế thừa, đa hình và trừu tượng).
-- Lịch sử và sự phát triển của Java: Tổng quan về sự ra đời và phát triển của ngôn ngữ Java.
-Control Statements - Các câu lệnh kiểm soát
+1. Java Strinh Method
+- Cung cấp rất nhiều phương thức để xử lý chuỗi. Các phương thức này giúp chúng ta thực hiện nhiều thao tác như cắt, ghép, chuyển đổi, so sánh, thay thế các chuỗi, ...
+2. Control Statements
+- Là các cấu trúc điều khiển 「if-else, switch-case, for, while, do-while, break và continue

@@ -17,9 +17,9 @@
 - Git là 1 hệ thống quản lý phiên bản phân tán (DVCS)
 - Hầu hết mọi thao tác với Git diễn ra ở Local
 - GitHub, GitLab và Azule là những trang web phát triển dự trên công cụ Git\
-![](./image/git/git.jpg)
+ ![alt](image/design-patterns-builder-diagram.png)
 ## Các khu vực làm việc và Repository
-![alt](image/git/working.png)
+ ![alt](\image\git\working.png)
 1. Working Directory (project)
 	+ Là khu vực mà bạn thực hiện các thay đổi trực tiếp trên các tệp của dự án.
 2. Staging Area (project/.git/index)
