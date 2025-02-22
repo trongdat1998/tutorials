@@ -16,10 +16,10 @@
 # Tìm hiểu về Git
 - Git là 1 hệ thống quản lý phiên bản phân tán (DVCS)
 - Hầu hết mọi thao tác với Git diễn ra ở Local
-- GitHub, GitLab và Azule là những trang web phát triển dự trên công cụ Git\
- ![alt](image/design-patterns-builder-diagram.png)
+- GitHub, GitLab và Azure DevOps là những trang web phát triển dự trên công cụ Git\
+ ![alt](https://github.com/trongdat1998/tutorials/blob/main/image/git/git.jpg?raw=true)
 ## Các khu vực làm việc và Repository
- ![alt](\image\git\working.png)
+ ![alt](https://github.com/trongdat1998/tutorials/blob/main/image/git/working.png?raw=true)
 1. Working Directory (project)
 	+ Là khu vực mà bạn thực hiện các thay đổi trực tiếp trên các tệp của dự án.
 2. Staging Area (project/.git/index)
@@ -29,30 +29,30 @@
 4. Remote repository
 	+ Là repository để chia sẻ giữa nhiều người và bố trí trên server chuyên dụng
 ## Trạng thái của file trong Git
-![alt](image/git/status_file.jpg)
+![alt](https://github.com/trongdat1998/tutorials/blob/main/image/git/status_file.jpg?raw=true)
 - Ở trên local repository file có 2 trạng thái là: Được Git theo dõi và không được Git theo dõi
 1. Untracked (Chưa được Git theo dõi)
-- Tệp mới được tạo hoặc thêm vào thư mục làm việc nhưng chưa được Git theo dõi.
-- Hiển thị trong *git status* dưới danh mục **Untracked files:**
-- Để chuyển trạng thái Untracked ⇒ Staged\
-	**git add**
+	- Tệp mới được tạo hoặc thêm vào thư mục làm việc nhưng chưa được Git theo dõi.
+	- Hiển thị trong *git status* dưới danh mục **Untracked files:**
+	- Để chuyển trạng thái Untracked ⇒ Staged\
+		**git add**
 2. Modified
-- Là những file có sự thay đổi và được Git theo dõi
-- Hiển thị trong *git status* dưới danh mục **Changes not staged for commit:**
-- Để chuyển trạng thái Modified ⇒ Staged\
-	**git add**
+	- Là những file có sự thay đổi và được Git theo dõi
+	- Hiển thị trong *git status* dưới danh mục **Changes not staged for commit:**
+	- Để chuyển trạng thái Modified ⇒ Staged\
+		**git add**
 3. Staged
-- Đánh dấu các sự thay đổi để chuẩn bị cho bước commit
-- Hiển thị trong *git status* dưới danh mục **Changes to be committed:**
-- Để chuyển trạng thái *Staged ⇒ Unmodified*\
-	**git commit**
-- - Để chuyển trạng thái Staged về trạng thái trước đấy (Untracked và Staged)\
-	**git reset**
+	- Đánh dấu các sự thay đổi để chuẩn bị cho bước commit
+	- Hiển thị trong *git status* dưới danh mục **Changes to be committed:**
+	- Để chuyển trạng thái *Staged ⇒ Unmodified*\
+		**git commit**
+	- Để chuyển trạng thái Staged về trạng thái trước đấy (Untracked và Staged)\
+		**git reset**
 4. Unmodified
-- Khi các file đã được đánh dấu sau khi được commit sẽ lại trở về trạng thái ko thay đổi
-- Lúc này khi chúng ta *git status* sẽ không còn thấy các file có thay đỗi nữa.
-- Để chuyển trạng thái *Unmodified ⇒ Remote Repo*\
-	**git push**
+	- Khi các file đã được đánh dấu sau khi được commit sẽ lại trở về trạng thái ko thay đổi
+	- Lúc này khi chúng ta *git status* sẽ không còn thấy các file có thay đỗi nữa.
+	- Để chuyển trạng thái *Unmodified ⇒ Remote Repo*\
+		**git push**
 ## Thao tác cơ bản trên Git
 - Tìm hiểu về các command thông dụng trong Git
 ### Các lệnh cơ bản trong Git
