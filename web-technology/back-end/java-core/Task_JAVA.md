@@ -1,14 +1,11 @@
 
-## 1. Giới thiệu Java
-	1. Giới thiệu ngôn ngữ lập trình Java ✔
-	- Được xây dựng và kế thừa kế thừa từ C và C++## 1. Giới thiệu Java
-	1. Giới thiệu ngôn ngữ lập trình Java ✔
-	- Được xây dựng và kế thừa kế thừa từ C và C++
+## 1. Giới thiệu Java ✔
+- Được xây dựng và kế thừa kế thừa từ C và C++
 ### 1.2. Tại sao nên học Java? ✔
 ### 1.3. Cơ hội nghề nghiệp với Java ✔
 ### 1.4. Thiết lập môi trường và cài đặt IDE ✔
-	- Cài đặt JDK.
-	- Cài đặt IDE: Eclipse, Netbeans, IntelliJ
+- Cài đặt JDK.
+- Cài đặt IDE: Eclipse, Netbeans, IntelliJ
 ## 2. Nhập môn Java
 ### 2.1.Bộ ký tự trong Java ✔
 	- Unicode: là chuẩn mã hóa ký tự quốc tế, chứa mọi ngôn ngữ trên thế giới

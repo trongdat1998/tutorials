@@ -113,7 +113,7 @@ Có 23 mẫu được chia thành 3 nhóm.
 			Bank bankTP = BankFactory.getBank(BankType.TPBANK);
 			System.out.println(bankTP.getBankName());
 			
-			Bank bankCV = BankFactory.getBank(BankType.TPBANK);
+			Bank bankCV = BankFactory.getBank(BankType.VIETCOMBANK);
 			System.out.println(bankCV.getBankName());
 		}
 	}
