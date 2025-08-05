@@ -1,4 +1,4 @@
-1. Khái niện
+1. Java String là gì
 - String cơ bản là một đối tượng đại diện cho chuỗi các ký tự được xắp xếp theo một trật tự nhất định
     ```java
     char[] ch = {'j','a','v','a','s','t','r','i','n','g'};
@@ -67,3 +67,4 @@
     String s = new String("welcome");
     ```
 - JVM luôn tạo ra một string object mới trong bộ nhớ heap (không phải trong pool)
+=>todo

@@ -1,56 +1,58 @@
 # Singleton
 
 ## Khái niệm
-- Chỉ tạo ra một đối tượng duy nhất trong suốt quá trình thực  thi trương chình.
-## Trường hợp nào nên dùng?
-- Đảm bảo chỉ có một thể hiện(instance) duy nhất của một class
+- Chỉ tạo ra một đối tượng duy nhất trong suốt quá trình thực thi chương trình.
+## Trường hợp nào nên dùng
+- Đảm bảo chỉ có một thể hiện (instance) duy nhất của một class
 - Việc quản lý việc truy cập tốt hơn vì chỉ có một thể hiện duy nhất.
 ## Cách cài đặt
-- **private constructor** giúp để hạn chế truy cập từ class bên ngoài.
-- Thể hiện của đối tượng được đặt **private static final** đảm bảo biến chỉ được khởi tạo trong class.
-- Có một method **public static** để return instance được khởi tạo ở trên.
+1. **private constructor** giúp để hạn chế truy cập từ class bên ngoài.
+2. Thể hiện của đối tượng được đặt **private static final** đảm bảo biến chỉ được khởi tạo trong class.
+3.  Có một method **public static** để return instance được khởi tạo ở trên.
 ## Cách cài đặt trong code
 - [Tai liệu tham khảo](https://gpcoder.com/4190-huong-dan-java-design-pattern-singleton/)
-- Trên thực tế chúng ta có rất nhiều cách để tạo ra một **Singleton** tuy nhiên mình sẽ chỉ giới thiệu những mẫu chính và thường gặp.
-- Nên sử dụng **BillPughSingleton** vì có hiệu quả cao,
- sử dụng **Lazy Initialization** khi làm việc với ứng dụng đơn luồng, và **Double Check Locking** khi làm việc với ứng dụng đa luồng.
-1. Eager initialization
-+ Đối tượng được khởi tạo ngay khi được gọi đến
-+ Nó có một nhược điểm là đối tượng được tạo nhưng không dùng tới.
-- Note: Đây là các dễ nhất tuy nhiên nó dễ dàng bị phá vỡ bởi Reflection.
-    ```java
-    public class EagerInitialization {
-        private EagerInitialization(){}
-        private static final EagerInitialization INSTANCE = new EagerInitialization();
-        public static EagerInitialization getInstance(){
-            return INSTANCE;
-        }
-    }
-    ```
-2. Static block initialization
-+ Cách làm tương tự như Eager initialization chỉ khác phần static block cung cấp thêm handle exception khi tạo instance.
-    ```java
-    public class StaticBlockSingleton {
-        private StaticBlockSingleton() {}
-        private static final StaticBlockSingleton INSTANCE;
-        // Static block initialization for exception handling
-        static {
-            try {
-                INSTANCE = new StaticBlockSingleton();
-            } catch (Exception e) {
-                throw new RuntimeException("Exception occured in creating singleton instance");
+- Có nhiều cách để tạo ra một *singleton* 
+    + Nên sử dụng **BillPughSingleton** vì có hiệu quả cao
+    + Sử dụng **Lazy Initialization** khi làm việc với ứng dụng đơn luồng
+    + **Double Check Locking** khi làm việc với ứng dụng đa luồng.
+1. Eager Initialization
+    - Đối tượng được khởi tạo ngay khi được gọi đến
+    - Nó có một nhược điểm là đối tượng được tạo nhưng không dùng tới.
+        ```java
+        public class EagerInitialization {
+            private EagerInitialization(){}
+            private static final EagerInitialization INSTANCE = new EagerInitialization();
+            public static EagerInitialization getInstance(){
+                return INSTANCE;
             }
         }
-        public static StaticBlockSingleton getInstance() {
-            return INSTANCE;
+        ```
+        ※ Đây là các dễ nhất, tuy nhiên nó dễ dàng bị phá vỡ bởi Reflection.
+2. Static block initialization
+    - Cách làm tương tự như *Eager initialization* chỉ khác phần static block cung cấp thêm handle exception khi tạo instance.
+        ```java
+        public class StaticBlockSingleton {
+            private StaticBlockSingleton() {}
+            private static final StaticBlockSingleton INSTANCE;
+            // Static block initialization for exception handling
+            static {
+                try {
+                    INSTANCE = new StaticBlockSingleton();
+                } catch (Exception e) {
+                    throw new RuntimeException("Exception occured in creating singleton instance");
+                }
+            }
+            public static StaticBlockSingleton getInstance() {
+                return INSTANCE;
+            }
         }
-    }
-    ```
+        ```
 3. Lazy Initialization
 + Cách này đã khắc phục được nhược điểm của cách Eager initialization, chỉ khi nào getInstance() được gọi thì instance mới được khởi tạo
 + Cách này chỉ sử dụng tốt trong trường hợp **đơn luồng** (single-thread).
 + [Lưu ý:] Nhưng nếu có nhiều luồng (multi-thread) cùng chạy và cùng gọi đến hàm getInstance() tại cùng một thời điểm.
  Thì có thể có nhiều hơn 1 thể hiện của instance. Để khắc phục nhược điểm này chúng ta sử dụng **Thread Safe Singleton**.
+ 
     ```java
     public class LazyInitialization {
         private LazyInitialization(){}

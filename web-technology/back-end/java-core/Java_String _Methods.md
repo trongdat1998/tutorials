@@ -12,7 +12,7 @@
 |contains(CharSequence sequence)|Kiểm tra chuỗi có chứa chuỗi con sequence hay không.|
 |isEmpty()|Kiểm tra xem chuỗi có rỗng ("") hay không.|
 
-#### Phương thức lấy dữ liệu từ chuỗi
+### Phương thức lấy dữ liệu từ chuỗi
 
 |      Phương thức     |       Mô tả        |
 |:------------------|:----------------------|
@@ -24,7 +24,7 @@
 |indexOf(String str, int fromIndex)|Tìm chuỗi str từ vị trí fromIndex.|
 |lastIndexOf(String str)|Tìm vị trí xuất hiện cuối cùng của str.|
 
-#### Phương thức thay đổi hoặc chuyển đổi chuỗi
+### Phương thức thay đổi hoặc chuyển đổi chuỗi
 
 |      Phương thức     |       Mô tả        |
 |:------------------|:----------------------|
@@ -39,7 +39,7 @@
 |replaceAll(String regex, String replacement)| Thay thế theo biểu thức chính quy.|
 |replaceFirst(String regex, String replacement)| 	Thay thế lần xuất hiện đầu tiên của chuỗi khớp với regex|
 
-#### Phương thức nối chuỗi
+### Phương thức nối chuỗi
 
 |      Phương thức     |       Mô tả        |
 |:------------------|:----------------------|
@@ -47,14 +47,14 @@
 |join(CharSequence delimiter, CharSequence... elements) (Java 8+)| Nối các phần tử với dấu phân cách delimiter.|
 |+ (toán tử cộng chuỗi)| Nối hai chuỗi lại với nhau.|
 
-#### Phương thức cắt chuỗi
+### Phương thức cắt chuỗi
 
 |      Phương thức     |       Mô tả        |
 |:------------------|:----------------------|
 |split(String regex)| Cắt chuỗi dựa trên biểu thức chính quy.|
 |split(String regex, int limit)| Cắt chuỗi nhưng giới hạn số lượng phần tử.|
 
-#### Phương thức định dạng chuỗi
+### Phương thức định dạng chuỗi
 
 |      Phương thức     |       Mô tả        |
 |:------------------|:----------------------|

@@ -1,8 +1,6 @@
-※ Java cung cấp 3 câu lệnh điều khiển
-
-### Decision Making statements - Câu lệnh rẻ nhánh
+### 1. Decision Making statements - Câu lệnh rẻ nhánh
 「if-else và switch-case」
-1. if-else
+#### 1.1. if-else
 - Cho phép bạn thực hiện một hành động nếu điều kiện đúng (true), và nếu điều kiện sai (false)
 - Có các kiểu của mệnh đề if-else trong java như sau:
 	+ if
@@ -23,33 +21,32 @@
 	+ File Name: IfExample.java
 		```java
 		public class IfExample {  
-		public static void main(String[] args) {  
-			//defining an 'age' variable  
-			int age=20;  
-			//checking the age  
-			if(age>18){  
-				System.out.print("Age is greater than 18");  
+			public static void main(String[] args) {  
+				//defining an 'age' variable  
+				int age = 20;
+				//checking the age
+				if (age > 18) {
+					System.out.print("Age is greater than 18");
+				}
 			}  
-		}  
 		}  
 		```
 	+ Output:
 		```java
 		Age is greater than 18
 		```
-2. Switch
+#### 1.2. Switch
 - Là một cấu trúc điều khiển rẽ nhánh, giúp kiểm tra giá trị của một biến và thực hiện các khối lệnh tương ứng
 - Cú pháp:
 	```Java
 	switch(expression){    
 		case value1:    
-		//code to be executed;    
-		break;  //optional  
+			//code to be executed;    
+			break;  //optional  
 		case value2:    
-		//code to be executed;    
-		break;  //optional  
-		......    
-			
+			//code to be executed;    
+			break;  //optional  
+		......
 		default:     
 		code to be executed if all cases are not matched;  
 	}   
@@ -64,19 +61,23 @@
 		public class SwitchExample {  
 			public static void main(String[] args) {  
 				//Declaring a variable for switch expression  
-				int number=20;  
-				//Switch expression  
-				switch(number){  
-				//Case statements  
-				case 10: System.out.println("10");  
-				break;  
-				case 20: System.out.println("20");  
-				break;  
-				case 30: System.out.println("30");  
-				break;  
-				//Default case statement  
-				default:System.out.println("Not in 10, 20 or 30");  
-				}  
+				int number = 20;
+				//Switch expression
+				switch (number) {
+					//Case statements
+					case 10:
+						System.out.println("10");
+						break;
+					case 20:
+						System.out.println("20");
+						break;
+					case 30:
+						System.out.println("30");
+						break;
+					//Default case statement
+					default:
+						System.out.println("Not in 10, 20 or 30");
+				}
 			}  
 		}  
 		```
@@ -84,9 +85,9 @@
 		```java
 		20
 		```
-### Loop statements - Câu lệnh lặp
+### 2.Loop statements - Câu lệnh lặp
 「for, while và do-while」
-1. 
+#### 2.1. Vòng lặp for
 - for dùng khi biết trước số lần lặp.
 - Có 3 kiểu của vòng lặp for trong java
 	+ for đơn giản
@@ -114,47 +115,35 @@
 		public class ForExample {  
 			public static void main(String[] args) {  
 				//Code of Java for loop  
-				for(int i=1;i<=10;i++){  
-					System.out.println(i);  
+				for (int i = 1; i <= 10; i++) {
+					System.out.print(i + " "); 
 				}  
 			}  
 		}  
 		```
 	+ Output:
 		```java
-		1
-		2
-		3
-		4
-		5
-		6
-		7
-		8
-		9
-		10
+		1 2 3 4 5 6 7 8 9 10
 		````
 - Ví dụ 2:
 	+ FileName: ForEachExample
 		```java
 		class ForEachExample{  
 			public static void main(String args[]){  
-			//declaring an array  
-			int arr[]={12,13,14,44};  
-			//traversing the array with for-each loop  
-				for(int i:arr){  
-					System.out.println(i);  
-				}  
-			}   
+				//declaring an array  
+				int arr[] = {12, 13, 14, 44};
+				//traversing the array with for-each loop
+				for (int i : arr) {
+					System.out.print(i + " ");
+				} 
+			}  
 		}  
 		```
 	+ Output:
 		```java
-		12
-		12
-		14
-		44
+		12 13 14 44
 		```
-2. While
+#### 2.2. Vòng lặp While
 - while dùng khi chưa biết số lần lặp.
 - Cú pháp:
 	```Java
@@ -168,28 +157,19 @@
 		```java
 		public class WhileExample {  
 			public static void main(String[] args) {  
-				int i=1;  
-				while(i<=10){  
-					System.out.println(i);  
-				i++;  
+				int i = 1;
+				while (i <= 10) {
+					System.out.print(i + " ");
+					i++;
 				}  
 			}  
 		}  
 		```
 	+ Output:
 		```java
-		1
-		2
-		3
-		4
-		5
-		6
-		7
-		8
-		9
-		10
+		1 2 3 4 5 6 7 8 9 10
 		```
-3. do-while
+#### 2.3. Vòng lặp do-while
 - do-while dùng khi chưa biết số lần lặp và cần chạy ít nhất 1 lần.
 - Cú pháp:
 	```Java
@@ -202,82 +182,62 @@
 	+ FileName: DoWhileExample.java
 		```java
 		public class DoWhileExample {    
-			public static void main(String[] args) {    
-				int i=1;    
-				do{    
-					System.out.println(i);    
-				i++;    
-				}while(i<=10);    
+			public static void main(String[] args) {
+				int i = 1;  
+				do {
+					System.out.print(i + " ");
+					i++;
+				} while (i <= 10);  
 			}    
 		}   
 		```
 	+ Output:
 		```java
-		1
-		2
-		3
-		4
-		5
-		6
-		7
-		8
-		9
-		10
+		1 2 3 4 5 6 7 8 9 10 
 		```
-### Jump statements - Câu lệnh dừng
+### 3.Jump statements - Câu lệnh dừng
 「break và continue」
-1. Break
-- Break để thoát 1 vòng lặp hoặc một lệnh switch
+#### 3.1. Break
+- Break được dùng để thoát ra khỏi vòng lặp chứa nó ngay lập tức
 - Ví dụ:
 	+ FileName: BreakExample.java
 		```Java
 		public class BreakExample {  
 			public static void main(String[] args) {  
 				//using for loop  
-				for(int i=1;i<=10;i++){  
-					if(i==5){  
-						//breaking the loop  
-						break;  
-					}  
-					System.out.println(i);  
+				for (int i = 1; i <= 10; i++) {
+					if (i == 5) {
+						//breaking the loop
+						break;
+					}
+					System.out.print(i + " ");
 				}  
 			}  
 		}  
 		```
 	+ Output:
 		```java
-		1
-		2
-		3
-		4
+		1 2 3 4 
 		```
-2. Continue
-- Continue để tiếp tục vòng lặp tại điều kiện đã xác định và phía sau continue sẽ không được thực thi
+#### 3.2. Continue
+- Continue dùng để bỏ qua không thực hiện các lệnh phía bên dưới từ khóa continue của vòng lặp và quay lên kiểm tra trở lại biểu thức điều kiện lặp
 - Ví dụ:
 	+ FileName: ContinueExample.java
 		```Java
 		public class ContinueExample {  
 			public static void main(String[] args) {  
 				//for loop  
-				for(int i=1;i<=10;i++){  
-					if(i==5){  
-						//using continue statement  
-						continue;//it will skip the rest statement  
-					}  
-					System.out.println(i);  
-				}  
+				for (int i = 1; i <= 10; i++) {
+					if (i == 5) {
+						//using continue statement
+						continue;//it will skip the rest statement
+					}
+					System.out.print(i + " ");
+				} 
 			}  
 		}  
 		```
 	+ Output:
 		```java
-		1
-		2
-		3
-		4
-		6
-		7
-		8
-		9
-		10
+		1 2 3 4 6 7 8 9 10 
 		```
