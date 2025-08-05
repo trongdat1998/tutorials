@@ -183,22 +183,157 @@
 	+ String replace(char old, char new): thay thế các ký tự old thành new					
 ### 2.22. Mảng trong java ✔
 - Mảng (array) là tập hợp các biến cùng kiểu
-- Khai báo mảng trong java:
-	「 <Kiểu dữ liệu>[] <tên mảng> = new <kiểu dữ liệu>[số lượng phần tử];」 
-	「int[] arr = new int[100];」
-- Truy xuất các phần tử của mảng
-	+ Truy xuất trực tiếp: 「<tên_mảng>[vị_trí];」
-	+ Truy xuất tuần tự: dùng thêm vòng lặp (for, for-each)
+- Khai báo mảng trong java: 2 cách\
+	「 <Kiểu dữ liệu>[] <tên mảng> = new <kiểu dữ liệu>[số lượng phần tử];」 \
+	「 <Kiểu dữ liệu> <tên mảng>[] = new <kiểu dữ liệu>[số lượng phần tử];」 
+- Gán giá trị cho mảng\
+	「<tên_mảng>[vị_trí] = <giá_trị>;」
+- Truy xuất các phần tử của mảng\
+	「<tên_mảng>[vị_trí];」
+- Kiểm tra kích thước của mảng: length
+	```java
+	public class Main {
+		public static void main(String[] args) throws IOException {
+			int sample[] = new int[10];
+			int i;
+
+			for (i = 0; i < 5; i++) {
+				sample[i] = i;
+			}
+			
+			for (i = 0; i < 10; i++) {
+				System.out.println("Đây là phần tử sample[" + i + "]: " + sample[i]);
+			}
+			
+			System.out.println("Kích thước của sample: " + sample.length);
+		}
+	}
+	```
+	+ Output:
+	```java
+	Đây là phần tử sample[0]: 0
+	Đây là phần tử sample[1]: 1
+	Đây là phần tử sample[2]: 2
+	Đây là phần tử sample[3]: 3
+	Đây là phần tử sample[4]: 4
+	Đây là phần tử sample[5]: 0
+	Đây là phần tử sample[6]: 0
+	Đây là phần tử sample[7]: 0
+	Đây là phần tử sample[8]: 0
+	Đây là phần tử sample[9]: 0
+	Kích thước của sample: 10
+	```
 ### 2.23. Mảng đa chiều trong java ✔
 - Là mảng có 2 hoặc nhiều chiều
-	+ Cú pháp:
+	+ Cú pháp:\
 	「<Kiểu dữ liệu>[][][]..[] <tên mảng> = new <kiểu dữ liệu>[<kích thước thứ 1>][<kích thước thứ 2>]….[<kích thước thứ n>];」
-	+ Ví dụ:
+	+ Ví dụ:\
 	「 int[][] mang1 = new int[10][20]; 
-- Truy xuất các phần tử của mảng
+- Gán giá trị cho mảng\
+	「<tên_mảng>[vị_trí_hàng][vị_trí_cột] = <giá_trị>;」
+- Truy xuất các phần tử của mảng\
 	「<tên_mảng>[vị_trí_hàng][vị_trí_cột];」
-3. Lập trình hướng đối tượng
-- Lập trình hướng đối tượng: 4 tính chất
+## 3. Lập trình hướng đối tượng (Object-Oriented Programming – OOP) ✔
+### 3.1. Lập trình hướng đối tượng (OOP) là gì? ✔
+- OOP mô phỏng thế giới thực bằng cách sử dụng các đối tượng (object) và lớp (class).
+- Dễ bảo trì và dễ phát triển – nhất là với các dự án lớn, thông qua
+	+ Đối tượng bao gồm 2 thông tin: thuộc tính (thông tin, đăc điểm: name, age,.. ) và phương thức (hành động: method - buy, search, click).
+	+ Lớp bao gồm các thuộc tính và các phương thức (class User).
+### 3.2. Tính đóng gói (encapsulation) ✔
+- Là việc ẩn giấu thông tin không liên quan và hiện thị ra thông liên quan.
+-  Được thể hiện qua class, package và phạm vi truy cập *(Public - Protected - Default - Private)*
+-  Đơn vị đóng gói cơ bản của Java là lớp (class)
+- Quyền truy cập của đối tượng và gói chứa đối tượng đó
+
+|   Phạm vi truy cập | Bên trong class | Bên trong packge | Class con kế thừa class cha ở ngoài package | Bên ngoài package |
+|:------------------|:-----------------:|:-----------------:|:---------------------------:|:------------------:|
+|	Private	|	C	|	K	|	K	|	K	|
+|	Default	|	C	|	C	|	K	|	K	|
+|	Protected|	C	|	C	|	C	|	K	|
+|	Public	|	C	|	C	|	C	|	C	|
+### 3.3. Tính đa hình (polymorphism) ✔
+- Là khả năng mà một hành động có thể thực hiện theo nhiều cách khác nhau *(một tên – nhiều hành động)*
+- Được thể hiện qua 2 phường thức: Overloading và Overriding
+	+ Overloading (Ghi chồng): là kỹ thuật tạo ra nhiều phương thức cùng tên nhưng khác nhau vể tham số đầu vào
+		```java
+		class HinhChuNhat {
+			double tinhDienTich(double chieuDai, double chieuRong) {
+				return chieuDai * chieuRong;
+			}
+
+			double tinhDienTich(double canh) {
+				return canh * canh;
+			}
+		}
+		```
+	+ Overriding (Ghi đè): là kỹ thuật cho phép lớp con định nghĩa lại phương thức của lớp cha với cùng tên, cùng tham số và cùng kiểu trả về
+		```java
+		class ConNguoi {
+				void hienThi() {
+					System.out.println("Tôi là con người.");
+				}
+			}
+
+		class NhanVien extends ConNguoi {
+			void hienThi() {
+				System.out.println("Tôi là nhân viên.");
+			}
+		}
+
+		public class Main {
+
+			public static void main(String[] args) {
+				ConNguoi conNguoi = new NhanVien();
+				conNguoi.hienThi(); // In ra: “Tôi là nhân viên.”
+			}
+
+		}
+		```
+### 3.4. Tính kế thừa (inheritance) ✔
+- Là quá trình trong đó một đối tượng có thể dùng lại các thuộc tính của một lớp đối tượng khác
+- Code hay dùng: Extends - Override - Super
+	```java
+	class Shape {
+		private double radius = 50;
+		public void calculateArea() {
+			System.out.println("Tính diện tích của hình...");
+		}
+	}
+
+	class Circle extends Shape {
+		private double radius = 100;
+
+		// Từ khóa super được sử dụng để tham chiếu trực tiếp đến biến instance của lớp cha.
+		void display() {
+        	System.out.println(super.speed); //In ra: 50 
+    	}
+
+		public Circle(double radius) {
+			this.radius = radius;
+		}
+
+		// Ghi đè phương thức calculateArea() để tính diện tích của hình tròn
+		@Override
+		public void calculateArea() {
+			double area = Math.PI * radius * radius;
+			System.out.println("Diện tích hình tròn là: " + area);
+		}
+	}
+	```
+### 3.5. Tính trừu tượng (bbstraction) ✔
+- Là một quá trình tạo ra đối tượng tập trung vào người dùng cần thực hiện những gì, còn việc thực hiện ra sao thì không cần quan tâm
+- Code hay dùng: Abstract class và Interface
+### 3.6. Định nghĩa và khai báo lớp
+- Lớp trong Java hỗ trợ 4 nguyên tắc OOP
+- Lớp trong Java hỗ trợ các nguyên tắc cơ bản của lập trình hướng đối tượng:
+	```java
+	[public][abstract][final] class [<Tên lớp>] [extends <Tên lớp cha>] [implements <Tên giao diện>] {
+		// Các thuộc tính của lớp
+		// Các Phương thức của lớp
+	}
+	```
+	+ Trong đó:
+==================================
 - Kiểu dữ liệu và toán tử
 - Câu lệnh điều khiển và vòng lặp. =>DONE
 - Lớp, đối tượng và phương thức
