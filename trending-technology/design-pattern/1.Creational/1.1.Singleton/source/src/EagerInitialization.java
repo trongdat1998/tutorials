@@ -16,7 +16,6 @@ public class EagerInitialization {
         this.name = name;
     }
 
-//     Chạy hàm main để hiểu rõ cách hoạt động EagerInitialization
     public static void main(String[] args) {
         EagerInitialization eager1 = EagerInitialization.getInstance();
         eager1.setName("Join");

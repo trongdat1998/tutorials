@@ -4,9 +4,6 @@ import service.iplm.TPBank;
 import service.iplm.VietcomBank;
 
 public class BankFactory {
-    private BankFactory() {
-    }
-
     public static final Bank getBank(BankType bankType) {
         switch (bankType) {
 
