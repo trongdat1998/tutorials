@@ -1,7 +1,7 @@
 ### 1. Hệ thống quản lý phiên bản - Version Control System (VSC)
 - Là một hệ thống ghi nhận và lưu lại sự thay đổi của các file theo thời gian.
 - Cũng giúp bạn phục hồi quay về trạng thái ở một thời điểm trước đó
-- Phân loại VCS: có 3 loại
+- Phân loại VCS: <span style="color: red;">Có 3 loại</span>
 ##### 1.1. Hệ thống quản lý phiên bản cục bộ (Local Version Control Systems)
 - Là dạng quản lý phiên bản ngay trên máy tính cá nhân của người dùng
 - Nhược điểm: Không phù hợp cho làm việc nhóm. Dễ bị mất dữ liệu nếu ổ cứng bị hỏng.
@@ -14,6 +14,7 @@
 - Khi một client truy xuất dữ liệu từ máy chủ, nó không chỉ lấy về dữ liệu ở phiên bản mới nhất, mà nó còn tải về cả kho chứa của hệ thống.
 - Nhược điểm: Khó học
 - Ví dụ: Git
+
 ### 2. Tìm hiểu về Git
 - Git là 1 hệ thống quản lý phiên bản phân tán (DVCS)
 - Hầu hết mọi thao tác với Git diễn ra ở local
@@ -58,9 +59,10 @@
 	**$ git status**
 - Để chuyển trạng thái *Unmodified ⇒ Remote Repo*\
 	**$ git push**
-- Để chuyển trạng thái *Unmodified* về trạng thái trước đấy * Staged*\
+- Để chuyển trạng thái *Unmodified* về trạng thái trước đấy *Staged*\
 	**$ git reset --soft HEAD~1**
 ### 4.Thao tác cơ bản trên Git
+
 #### 4.1. Các lệnh cơ bản trong Git
 - Lấy đường link của Git trong folder dự án\
 	**$ git remote -v**
@@ -135,7 +137,7 @@
 - Đổi tên trên local
 	+ Đổi tên nhánh khi bạn đang đứng ở nhánh đấy\
 		**$ git branch -M <new_branch_name>**
-	+ Đổi tên nhánh khi bạn đang đứng ở nhánh khác
+	+ Đổi tên nhánh khi bạn đang đứng ở nhánh khác\
 		**$ git branch -M <old_branch_name><new_branch_name>**
 - Đổi tên và xóa nhánh cũ trên repo
 	+ Đẩy tên mới của nhánh lên repo\
@@ -184,7 +186,7 @@
 		```
 ### 10. Git status
 - Được dùng để biết thông tin trạng thái sửa đổi, thêm mới, xóa các file trước khi thực hiện commit
-- Nếu muốn hiện thị thông tin ngắn gọn hơn thì cho thêm tham số *-s*
+- Nếu muốn hiện thị thông tin ngắn gọn hơn thì cho thêm tham số *-s*\
 	**$ git status -s**\
 → <span style="color: red;">??</span> = untracked (file lạ)\
 → <span style="color: red;">M</span> = staged (có sửa đổi)\
@@ -227,13 +229,18 @@
 		***$ git checkout <tên_nhanh>***
 	+ Phục hồi file từ commit trước đó\
 		**$git checkout <commit_id> index.html**
-### 15. Git merge - rebase 
-- Sử dụng để gộp nhánh, gộp nhánh này vào nhánh khác.
-
-===================================
-// Todo
+### 15. Git rebase 
+- Tương đồng với merge nhưng có sự khác biệt như sau
+	+ Merge: Chỉ lấy nội dung commit cuối cùng của hai nhánh, tích hợp tạo thành commit mới. Các commit trước đó được giữ nguyên không thay đổi.
+	+ Rebase: Lấy code từ branch_mane2, từ những commit ở branch_mane2 tích hợp đồng thời tái tạo lại commit mới ở branch_mane1 (Các commit đã tồn tại bị bỏ đi).
+- Gộp nhánh master vào beta\
+	***$ git checkout beta***\
+	***$ git rebase master***
+### 16. Git stash
 - Lưu lại công việc đang làm ở branch này để chuyển sang branch khác (Khi bạn chưa muốn commit code).\
 	**$ git stash save # Hoặc $ git stash**
+- Đẩy lại nôi dung vừa được lưu\
+	**$ git stash pop**
 - Xem list các branch ở local với các nội dung bạn chưa muốn commit.\
 	**$ git stash list**
 - Xem lại nội dung thay đổi cụ thể ở branch chỉ định .\
@@ -244,37 +251,22 @@
 		*# number là ứng với số lấy ở $ git stash list*
 - Xoá toàn bộ các nội dung ở các nhánh chưa commnit lên remote repository.\
 	**$ git stash clear**
+===================================
 
-# Commmit
-
-## Tạo commit mới
-- Tức bạn thực hiện việc thay đổi code và lưu thay đổi đấy trên remote repository
-1. Khởi tạo repository (nếu chưa có)\
-	**$ git init**
-2. Thêm các file đã có sự thay đổi\
-	**$ git add <file_add>**
-- file_add là:*(. hoặc --all)* dùng để thêm tất cả các thay đổi, hoặc bạn có thể add các file bạn cần đẩy lên *
-3. Thực hiện note cho các nội dung thay đổi\
-	**$ git commit -m "<message>"**
-- Khi bạn lỡ may thực hiện < git add. > và bạn cần loại bỏ bớt đi các file không muốn đẩy lên\
-	**$ git reset**\
-		*# Giúp bạn quay lại đước < git add >, bạn sẽ thực hiện add những file cần đẩy lên git*
-4. Đưa code lên remote repository\
-	**$ git push origin <branch_name>**
-## Chỉnh sửa commit
+### 17. Chỉnh sửa commit
 - Dùng cho trường hợp commit bị sai, không hoàn chỉnh hoặc có vấn đề, bạn muốn loại bỏ nó
-### Tạo một commit mới vẫn dữ được các lịch sử commit trước đó
+#### 17.1 Tạo một commit mới vẫn dữ được các lịch sử commit trước đó
 - khi chạy lệnh $ git revert <commit_2_id> thì tạo ra một commit mới với tên Revert"commit_2'" và nội dung được copy từ commit_1\
 		old: commit_1 -> commit_2 -> commit_3\
 		update: commit_1 -> commit_2 -> commit_3 -> Revert"commit_2"\
-1. Lấy key của commit cần chuyển đến\
-	**$ git log**
-2. Chuyển commit mà bạn muốn code bạn thực hiện tại vị trí đấy\
-	**$ git revert <commit_id>**\
-		*# Sử dụng các lệnh VI - ấn :wq để thoát màn hình trên cửa sổ CMD*
-3. Thực hiện thay đổi lịch sử commit_id trên remote repository\
-	**$ git push**
-### Lấy nội dung tại commit_id và xóa toàn bộ nội dung và lịch sử commit trước đó
+	1. Lấy key của commit cần chuyển đến\
+		**$ git log**
+	2. Chuyển commit mà bạn muốn code bạn thực hiện tại vị trí đấy\
+		**$ git revert <commit_id>**\
+			*# Sử dụng các lệnh VI - ấn :wq để thoát màn hình trên cửa sổ CMD*
+	3. Thực hiện thay đổi lịch sử commit_id trên remote repository\
+		**$ git push**
+#### 17.2. Lấy nội dung tại commit_id và xóa toàn bộ nội dung và lịch sử commit trước đó
 - khi chạy lệnh $ git reset --hard <commit_2_id> các commit trước đó sẽ bị xóa\
 		old:commit_1 -> commit_2 -> 'commit_3\
 		update:commit_1 -> commit_2\
@@ -284,7 +276,7 @@
 	**$ git reset --hard <commit_id>**
 3. Thực hiện thay đổi lịch sử commit_id trên remote repository\
 	**$ git push --force**
-### Lấy nội dung tại commit_id và tạo ra một commit mới xóa toàn bộ nội dung và lịch sử commit trước đó
+#### 17.3. Lấy nội dung tại commit_id và tạo ra một commit mới xóa toàn bộ nội dung và lịch sử commit trước đó
 - khi chạy lệnh $ git reset –soft <commit_2_id> các tạo một commit mới (bạn cần thực hiện git commit -m) và commit trước đó sẽ bị xóa\
 		old: commit_1 -> commit_2 -> commit_3\
 		update:commit_1 -> commit_2\
@@ -296,22 +288,11 @@
 		**$ git commit -m'message"**
 	4. Thực hiện thay đổi lịch sử commit_id trên remote repository\
 		**$ git push**
-### Note: Sự khác nhau giữ $ git reset --hard và $ git reset --force
+#### 17.4. Note: Sự khác nhau giữ $ git reset --hard và $ git reset --force
 - Ngoài việc quay về vị trí commit_id chỉ định mà còn có các điểm khác như dưới.
 - *git reset --hard* # nội dung ở trong folder cũng loại bỏ tất cả sự thay đổi của file để máp với nội dung tại commit_id. git revert nội dung trong folder cùng tương tự
 - *git reset –-soft* # nội dung ở trong folder sẽ được dữ nguyên ở commit trước khi reset. Nên khi chọn cách này bạn cần tạo mới một commit mới hoặc lại bỏ các nội dung thay đổi. Khi bạn clone link git vào một folder mới các nội dung ở commit trước reset sẽ không thấy 
-## Chèn commit vào một vị trí bất kỳ
-- TODO
-## Thay đổi nội dung khi commit
-- Khi bạn lỡ commit nhưng nhận ra nội dung bị sai và cần chỉnh sửa và bạn vẫn muốn dữ commit không muốn xóa đi. Và chỉ sửa lại commit cuối cùng
-1. Add lại những nội dung cần chỉnh sửa lại\
-	**$ git add <file_cần_update_lại>**
-2. Sửa lại nội dung commit\
-	**$ git commit --amend --no-edit**
-3. Đẩy nội dung cần chỉnh sửa lại commit lên repo\
-	**$ git push -f origin**
-- TODO
-# Kéo code về local
+### 18. Git pull
 - Kéo tất cả các thay đổi từ khác với vị trí đứng về local.\
 	**$ git pull origin <nhánh_cần_kéo_về>**
 - Kéo tất cả các thay đổi từ mà bạn đang đứng về local.\
@@ -320,58 +301,36 @@
 	**$ git pull origin**
 - Cách pull chống sung đột\
 	**$ git pull --rebase**
-# Hợp nhất code
-1. Di chuyển về nhánh nhận sự hợp nhất.\
-	**$  git checkout <branch_mane1>**\
-		*# branch_mane1 là nhánh cần hợp nhất*
-2. Tiến hành hợp nhất.\
-	**$ git rebase <branch_mane2>**\
-		*# Code từ branch_mane2 được hợp nhất vào branch_mane1*
-## [Chú ý]: Tương đồng với merge nhưng có sự khác biệt như sau
-- Merge: Chỉ lấy nội dung commit cuối cùng của hai nhánh, tích hợp tạo thành commit mới. Các commit trước đó được giữ nguyên không thay đổi.
-- Rebase: Lấy code từ branch_mane2, từ những commit ở branch_mane2 tích hợp đồng thời tái tạo lại commit mới ở branch_mane1 (Các commit đã tồn tại bị bỏ đi).
-# Liên kết các dự án vào với nhau
-- Khi bạn muốn nhóm các project lại với nha thành một project tổng thì bạn cần dùng đên Git Submodules
-1. Tạo một remote repository trên  git để thực hiện tạo một project tổng. Các project nhỏ khác đã được tạo trên Git
-2. Thực hiện nhóm các project\
-	**$ git submodule add <url>**
-3. Khi add các submodule thì các project con không có gì, bạn cần chạy lệnh\
-	**$ git submodule update --init --recursive**
-4. Thực hiện tạo mới commit như thường\
-	** git add, commit, push**
-- Note: Bạn muốn thay đổi cá project con thì bạn vào chính project, chứ không được vào project all update code nó sẽ gây lỗi
-- Để cập nhật các submodule khi có sự update\
-	**$ git submodule update --recursive --remote --merge**
-# Sử lý code khi bị sung đột (conflict)
+### 19. Sử lý code khi bị sung đột (conflict)
 - Nguyên nhân: khi bạn cùng chỉnh sửa ở cùng một dùng code thì khả năng bị conflict khi merge là vô cùng cao
 - Bạn cần biết code nào đang là đoạn code chung và khác biệt giữa 2 file
 - VD: Tôi có file_A đang bị xung đột giữa 2 nhánh branch_1 (nhánh đang đúng) và branch_2
 + Code branch_1 :"<<<<<<< Updated upstream" ~ "======="
 + Code branch_2: "=======" ~  ">>>>>>> Stashed changes"
 + Những đoạn code không nằm trong những khoảng trên là code cả 2 nhánh đều có
-# Cách dùng file Gitignore
+### 20. Cách dùng file Gitignore
 - Liệt kê các file mà bạn không muốm đưa lên Git
 - Các pattern format hay dùng
-+ Cấu trúc dự án\
-	```java
-	.
-	├── build/
-	├── src/
-	│   ├── build/
-	│   └── temp/
-	└── .gitignore
-	```
-+ Tạo file Gitignore\
-Tải thư viện touch cho win\
-	**npm install touch-cli -g**\
-Tạo file cho thu mục\
-	**$ touch .gitignore**
-+ Sử dụng # để comment và có thể để cách dòng cho dễ đọc.
-+ Loại bỏ 1 file cụ thể: liệt kê trực tiếp tên tệp
-+ Sử dụng `*` tìm các file có định dạng và loại bỏ chúng\
-Vd) *.log -> Tìm tất cả các file có đuôi là .log, sẽ không thực hiện commit các file này lên Git
-+ Loại bỏ 1 folder cụ thể\
-	**/build/** -> chỉ loại bỏ được thư mục build ngang hàng với file gitignore\
-	**build/** -> loại bỏ được tất cả các thu mục có tên build
+	+ Cấu trúc dự án\
+		```java
+		.
+		├── build/
+		├── src/
+		│   ├── build/
+		│   └── temp/
+		└── .gitignore
+		```
+	+ Tạo file Gitignore\
+		Tải thư viện touch cho win\
+			**npm install touch-cli -g**\
+		Tạo file cho thu mục\
+			**$ touch .gitignore**
+	+ Sử dụng # để comment và có thể để cách dòng cho dễ đọc.
+	+ Loại bỏ 1 file cụ thể: liệt kê trực tiếp tên tệp
+	+ Sử dụng `*` tìm các file có định dạng và loại bỏ chúng\
+	Vd) *.log -> Tìm tất cả các file có đuôi là .log, sẽ không thực hiện commit các file này lên Git
+	+ Loại bỏ 1 folder cụ thể\
+		**/build/** -> chỉ loại bỏ được thư mục build ngang hàng với file gitignore\
+		**build/** -> loại bỏ được tất cả các thu mục có tên build
 
 
