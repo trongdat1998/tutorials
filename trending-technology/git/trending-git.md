@@ -150,12 +150,12 @@
 
 ### 8. Git Add
 - Lưu thông tin thay đổi vào vùng *staging* để chuẩn bị cho lệnh commit tiếp theo
-+ Đưa vào vùng staging file, thư mục cụ thể\
-	**$ git add <file1><file2>**
-+ Đưa vào vùng staging toàn bộ thư mục làm việc\
-	**$ git add .** # Thêm tất cả thay đổi.
-+ Đưa vào vùng staging toàn bộ thư mục làm việc có đuôi *.java*\
-	**$ git add .java** 
+	+ Đưa vào vùng staging file, thư mục cụ thể\
+		**$ git add <file1><file2>**
+	+ Đưa vào vùng staging toàn bộ thư mục làm việc\
+		**$ git add .** # Thêm tất cả thay đổi.
+	+ Đưa vào vùng staging toàn bộ thư mục làm việc có đuôi *.java*\
+		**$ git add .java** 
 ### 9. Git Commit
 - Lệnh commit cơ bản, thực hiện với tham số *-m* để kèm dòng thông tin về commit\
 	**$ git commit -m "Commit message"**
@@ -251,21 +251,19 @@
 		*# number là ứng với số lấy ở $ git stash list*
 - Xoá toàn bộ các nội dung ở các nhánh chưa commnit lên remote repository.\
 	**$ git stash clear**
-===================================
-
 ### 17. Chỉnh sửa commit
 - Dùng cho trường hợp commit bị sai, không hoàn chỉnh hoặc có vấn đề, bạn muốn loại bỏ nó
 #### 17.1 Tạo một commit mới vẫn dữ được các lịch sử commit trước đó
 - khi chạy lệnh $ git revert <commit_2_id> thì tạo ra một commit mới với tên Revert"commit_2'" và nội dung được copy từ commit_1\
 		old: commit_1 -> commit_2 -> commit_3\
 		update: commit_1 -> commit_2 -> commit_3 -> Revert"commit_2"\
-	1. Lấy key của commit cần chuyển đến\
-		**$ git log**
-	2. Chuyển commit mà bạn muốn code bạn thực hiện tại vị trí đấy\
-		**$ git revert <commit_id>**\
-			*# Sử dụng các lệnh VI - ấn :wq để thoát màn hình trên cửa sổ CMD*
-	3. Thực hiện thay đổi lịch sử commit_id trên remote repository\
-		**$ git push**
+1. Lấy key của commit cần chuyển đến\
+	**$ git log**
+2. Chuyển commit mà bạn muốn code bạn thực hiện tại vị trí đấy\
+	**$ git revert <commit_id>**\
+		*# Sử dụng các lệnh VI - ấn :wq để thoát màn hình trên cửa sổ CMD*
+3. Thực hiện thay đổi lịch sử commit_id trên remote repository\
+	**$ git push**
 #### 17.2. Lấy nội dung tại commit_id và xóa toàn bộ nội dung và lịch sử commit trước đó
 - khi chạy lệnh $ git reset --hard <commit_2_id> các commit trước đó sẽ bị xóa\
 		old:commit_1 -> commit_2 -> 'commit_3\
@@ -280,14 +278,14 @@
 - khi chạy lệnh $ git reset –soft <commit_2_id> các tạo một commit mới (bạn cần thực hiện git commit -m) và commit trước đó sẽ bị xóa\
 		old: commit_1 -> commit_2 -> commit_3\
 		update:commit_1 -> commit_2\
-	1. Lấy key của commit cần chuyển đến\
-		**$ git log**
-	2. Đưa branch về trạng thái của commit_id được chọn\
-		**$ git reset –-soft <commit_id>**
-	3. Tạo nôi dung cho mommit\
-		**$ git commit -m'message"**
-	4. Thực hiện thay đổi lịch sử commit_id trên remote repository\
-		**$ git push**
+1. Lấy key của commit cần chuyển đến\
+	**$ git log**
+2. Đưa branch về trạng thái của commit_id được chọn\
+	**$ git reset –-soft <commit_id>**
+3. Tạo nôi dung cho mommit\
+	**$ git commit -m'message"**
+4. Thực hiện thay đổi lịch sử commit_id trên remote repository\
+	**$ git push**
 #### 17.4. Note: Sự khác nhau giữ $ git reset --hard và $ git reset --force
 - Ngoài việc quay về vị trí commit_id chỉ định mà còn có các điểm khác như dưới.
 - *git reset --hard* # nội dung ở trong folder cũng loại bỏ tất cả sự thay đổi của file để máp với nội dung tại commit_id. git revert nội dung trong folder cùng tương tự
@@ -305,9 +303,9 @@
 - Nguyên nhân: khi bạn cùng chỉnh sửa ở cùng một dùng code thì khả năng bị conflict khi merge là vô cùng cao
 - Bạn cần biết code nào đang là đoạn code chung và khác biệt giữa 2 file
 - VD: Tôi có file_A đang bị xung đột giữa 2 nhánh branch_1 (nhánh đang đúng) và branch_2
-+ Code branch_1 :"<<<<<<< Updated upstream" ~ "======="
-+ Code branch_2: "=======" ~  ">>>>>>> Stashed changes"
-+ Những đoạn code không nằm trong những khoảng trên là code cả 2 nhánh đều có
+	+ Code branch_1 :"<<<<<<< Updated upstream" ~ "======="
+	+ Code branch_2: "=======" ~  ">>>>>>> Stashed changes"
+	+ Những đoạn code không nằm trong những khoảng trên là code cả 2 nhánh đều có
 ### 20. Cách dùng file Gitignore
 - Liệt kê các file mà bạn không muốm đưa lên Git
 - Các pattern format hay dùng
